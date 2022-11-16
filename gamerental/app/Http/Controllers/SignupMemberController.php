@@ -37,6 +37,7 @@ class SignupMemberController extends Controller
      */
     public function store(Request $request)
     {
+        $folder_name = config('constants.options.members_requirements_folder_name');
         
         $member = new Member;
         $member->first_name = $request->input('fname');
@@ -52,19 +53,34 @@ class SignupMemberController extends Controller
 
             $files = $request->file();
             $profile = $files['profile'];
-            $filename = time() . "=" . $profile->getClientOriginalName();
-            $profile->move(public_path('images_requirements'), $filename);
-        $member->img_profile = $filename;
+            $profile_img = time() . "_" . $profile->getClientOriginalName();
+            $profile->move(public_path(config($folder_name)), $profile_img);
+
+            $identification = $files['id'];
+            $id_img = time() . "_" . $identification->getClientOriginalName();
+            $identification->move(public_path(config($folder_name)), $id_img);
+       
+            $proof = $files['proof'];
+            $proof_img = time() . "_" . $proof->getClientOriginalName();
+            
+            $proof->move(public_path(config($folder_name)), $proof_img);
+
+            $member->img_profile = $profile_img;
+            $member->img_id = $id_img;
+            $member->img_requirements = $proof_img;
+
 
             echo public_path('images');
-        // $member->save();
+        $member->save();
 
-        // echo"$member->member_id";
+       
         // return redirect("welcome");
     }
 
     public function show_signup_form(){
-        return view ('signup_member');
+        $allowed_imgs = config("constanst.options.allowed_images");
+
+        return view ('signup_member', ["allowed_img_format"=>$allowed_imgs]);
     }
     /**
      * Display the specified resource.

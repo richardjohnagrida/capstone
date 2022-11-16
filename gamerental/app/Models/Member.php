@@ -33,12 +33,9 @@ class Member extends Model
 {
 	protected $table = 'members';
 	protected $primaryKey = 'member_id';
-	public $timestamps = false;
+	public $timestamps = true;
 
-	protected $casts = [
-		'last_name' => 'int',
-		'contact_number' => 'int'
-	];
+	
 
 	protected $dates = [
 		'birthday'

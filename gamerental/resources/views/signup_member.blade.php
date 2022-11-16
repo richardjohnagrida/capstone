@@ -28,12 +28,13 @@
         <label>Address</label>
         <input type="text" name="address"></input><br>
         <label>Upload profile photo:</label>
-        <input type="file" name="profile"></input>
+        <input type="file" name="profile" accept="{{$allowed_img_format}}"></input>
         <label>Upload governement ID:</label>
         <input type="file" name="id"></input>
         <label>Upload Proof of Billing:</label>
         <input type="file" name="proof"></input>
         <button type="submit">Submit</button>
+        
     </form>
 </body>
 </html>
