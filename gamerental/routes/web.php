@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SignupMemberController;
 /*
-|--------------------------------------------------------------------------
+|x`--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// 
+// Route::resource('/members', SignupMemberController::class);
+
+Route::get('/signup', [SignupMemberController::class, 'show_signup_form']);
+
+Route::post('/signup_member', [SignupMemberController::class, 'store']);
+
+
