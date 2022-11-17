@@ -9,7 +9,6 @@
 <body>
     <div class="container">
         @include('layouts/aside')
-
         @include('layouts/right')
         @include('layouts/renter')
         @include('layouts/forApproval')
