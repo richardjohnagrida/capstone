@@ -24,7 +24,6 @@
         <input type="email" name="email"><br>
         <label>Password</label>
         <input type="password" name="password"><br>
-        <input type="password" name="password"><br>
         <label>Confirm Password</label>
         <input type="password" name="confirmPass"><br>
         <label>Contact Number</label>

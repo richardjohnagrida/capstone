@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Member;
 use DB;
 
@@ -44,12 +45,12 @@ class SignupMemberController extends Controller
         $member->last_name = $request->input('lname');
         $member->birthday = $request->input('dob');
         $member->email = $request->input('email');
-        $member->password = $request->input('password');
+        $member->password = Hash::make($request->input('password'));
         $member->contact_number = $request->input('contact');
         $member->address = $request->input('address');
         $member->status = 'pending';
         $member->user_type = 'member';
-      
+        
 
             $files = $request->file();
             $profile = $files['profile'];
