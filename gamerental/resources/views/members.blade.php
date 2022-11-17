@@ -8,9 +8,15 @@
 
 <body>
     <div class="container">
+        {{-- SIDEBAR --}}
         @include('layouts/aside')
+
         @include('layouts/right')
-        @include('layouts/renter')
+        {{-- <!-- START OF MAIN --> --}}
+        <main>
+            @include('layouts/renter')
+        </main>
+        {{-- <!-- END OF MAIN --> --}}
         @include('layouts/forApproval')
     </div>
 </body>
