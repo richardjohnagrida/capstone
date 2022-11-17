@@ -70,11 +70,11 @@ class SignupMemberController extends Controller
             $member->img_requirements = $proof_img;
 
 
-            echo public_path('images');
+         
         $member->save();
 
        
-        // return redirect("welcome");
+        return redirect("welcome");
     }
 
     public function show_signup_form(){
