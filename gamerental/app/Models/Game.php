@@ -30,8 +30,8 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
 	protected $table = 'games';
-	public $incrementing = false;
-	public $timestamps = false;
+	public $incrementing = true;
+	public $timestamps = true;
 
 	protected $casts = [
 		'game_id' => 'int',
