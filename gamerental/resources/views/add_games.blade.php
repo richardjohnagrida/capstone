@@ -25,6 +25,9 @@
             <option value="Strategy">Strategy</option>
             <option value="Sports">Sports</option>
             <option value="Sports">Simulation</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Adventure">Puzzle</option>
+
         </select>
 
         <label>Console</label>
