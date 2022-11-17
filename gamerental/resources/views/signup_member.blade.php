@@ -20,9 +20,9 @@
         <label>Email</label>
         <input type="email" name="email"></input><br>
         <label>Password</label>
-        <input type="text" name="password"></input><br>
+        <input type="password" name="password"></input><br>
         <label>Confirm Password</label>
-        <input type="text" name="confirmPass"></input><br>
+        <input type="password" name="confirmPass"></input><br>
         <label>Contact Number</label>
         <input type="text" name="contact"></input><br>
         <label>Address</label>
