@@ -63,7 +63,6 @@ class SignupMemberController extends Controller
        
             $proof = $files['proof'];
             $proof_img = time() . "_" . $proof->getClientOriginalName();
-            
             $proof->move(public_path(config($folder_name)), $proof_img);
 
             $member->img_profile = $profile_img;
