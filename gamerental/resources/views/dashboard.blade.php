@@ -20,6 +20,5 @@
 
         @include('layouts/right')
     </div>
-
-    
+    <script src="/js/index.js"></script>
 </body>
