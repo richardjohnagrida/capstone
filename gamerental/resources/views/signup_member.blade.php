@@ -33,7 +33,6 @@
         <input type="text" name="address"><br>
         <label>Upload profile photo:</label>
         <input type="file" name="profile" accept="{{ $allowed_img_format }}">
-        <input type="file" name="profile" accept="{{ $allowed_img_format }}">
         <label>Upload governement ID:</label>
         <input type="file" name="id">
         <label>Upload Proof of Billing:</label>
