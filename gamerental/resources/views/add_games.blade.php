@@ -29,7 +29,7 @@
             <option value="Adventure">Puzzle</option>
 
         </select>
-
+        <br>
         <label>Console</label>
         <select name="console">
             @foreach ($platforms as $platform)
@@ -37,6 +37,10 @@
             @endforeach
         </select>
         <br>
+        <label>Price per week</label>
+        <input type="number" name="week"><br>
+        <label>Price per month</label>
+        <input type="number" name="month"><br>
         <label>Total Quantity</label>
         <input type="number" name="qty"><br>
         <label>Description</label>

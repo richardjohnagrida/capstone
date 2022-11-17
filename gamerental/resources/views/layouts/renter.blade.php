@@ -1,5 +1,5 @@
 <div class="recent-renter">
-    <h2>Recent Renter</h2>
+    <h2>Recent Rentals</h2>
     <table>
         <thead>
             <tr>

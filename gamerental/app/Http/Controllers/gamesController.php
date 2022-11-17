@@ -50,6 +50,8 @@ class GamesController extends Controller
         $games->total_qty = $request->input('qty');
         $games->qty_on_hand = $request->input('qty');
         $games->qty_available = $request->input('qty');
+        $games->price_per_week = $request->input('week');
+        $games->price_per_month = $request->input('month');
         $games->waiting_qty = 0 ;
         $games->status = 'active';
        
