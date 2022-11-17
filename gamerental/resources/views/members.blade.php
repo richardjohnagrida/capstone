@@ -14,7 +14,7 @@
         @include('layouts/right')
         {{-- <!-- START OF MAIN --> --}}
         <main>
-            @include('layouts/renter')
+            @include('layouts/memberRenter')
         </main>
         {{-- <!-- END OF MAIN --> --}}
         @include('layouts/forApproval')
