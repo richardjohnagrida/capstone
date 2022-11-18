@@ -6,19 +6,25 @@
                 <th>Customer Name</th>
                 <th>Game Name</th>
                 <th>Rented Date</th>
-                <th>Due Date</th>
+                <th>Due</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Ate jo</td>
-                <td>Barbie Fashion</td>
-                <td>01-01-2022</td>
-                <td>01-02-2022</td>
-                <td class="success">Active</td>
-                <td class="primary"><a href="">Details</a></td>
-            </tr>
+
+            @foreach ($rentals as $rental)
+                <tr>
+                    <td>{{ $rental->first_name }} . {{ $rental->last_name }}</td>
+                    <td>{{ $rental->name }}</td>
+                    <td>{{ $rental->created_at }}</td>
+                    <td>{{ $rental->due_dates }}</td>
+
+
+                    <td class="success">Active</td>
+                    <td class="primary"><a href="">Details</a></td>
+                </tr>
+            @endforeach
+
         </tbody>
     </table>
     <a href="member.html">Show All</a>

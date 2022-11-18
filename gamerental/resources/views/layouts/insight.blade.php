@@ -6,9 +6,12 @@
         </span>
         <div class="middle">
             <div class="left">
-                <h3>Total Rent</h3>
+                <h3>Current Profit</h3>
                 <!-- TODO data-val should be connected to the database -->
-                <h1>$<b class="num" data-val="1000">000</b></h1>
+
+                @foreach ($profits as $profit)
+                    <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b></h1>
+                @endforeach
             </div>
             <div class="progress">
                 <!-- <svg>

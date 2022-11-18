@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Game;
-use App\Models\Platform;
+use App\Models\Member;
+use App\Models\Orderitem;
+use App\Models\Ordersgames;
 use DB;
 
 class GamesController extends Controller
@@ -88,6 +90,7 @@ class GamesController extends Controller
         
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *
