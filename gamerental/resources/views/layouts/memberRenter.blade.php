@@ -7,15 +7,7 @@
             </span></button>
     </form>
 </div>
-<div class="member search">
-    <h1>Member</h1>
-    <form action="" class="search-bar">
-        <input type="text" placeholder="Search" name="">
-        <button type="submit"><span class="material-icons-sharp">
-                search
-            </span></button>
-    </form>
-</div>
+
 <div class="recent-renter member">
     <table>
         <thead>
