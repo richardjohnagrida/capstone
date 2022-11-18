@@ -21,5 +21,7 @@
             </tr>
         </tbody>
     </table>
-    <a href="member.html">Show All</a>
+    <div class="showall">
+        <a href="member.html">Show All</a>
+    </div>
 </div>
