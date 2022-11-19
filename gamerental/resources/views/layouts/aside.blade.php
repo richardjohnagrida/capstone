@@ -17,13 +17,13 @@
             </span>
             <h3>Dashboard</h3>
         </a>
-        <a href="member.html">
+        <a href="members">
             <span class="material-icons-sharp">
                 person
             </span>
             <h3>Members</h3>
         </a>
-        <a href="">
+        <a href="add_games">
             <span class="material-icons-sharp">
                 sports_esports
             </span>

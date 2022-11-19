@@ -10,7 +10,57 @@
 
     <div class="container">
         {{-- SIDEBAR --}}
-        @include('layouts/aside')
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="/images/carbon_game-console.png" alt="">
+                    <h2>GA<span class="danger">ME</span> </h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="admin_dashboard">
+                    <span class="material-icons-sharp">
+                        dashboard_customize
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="members">
+                    <span class="material-icons-sharp">
+                        person
+                    </span>
+                    <h3>Members</h3>
+                </a>
+                <a href="add_games" class="active">
+                    <span class="material-icons-sharp">
+                        sports_esports
+                    </span>
+                    <h3>Games</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">
+                        list_alt
+                    </span>
+                    <h3>Orders</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">
+                        edit_note
+                    </span>
+                    <h3>Create Order</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
 
         {{-- <!-- START OF MAIN --> --}}
         <main>
@@ -136,7 +186,8 @@
                                     <label>Description</label>
                                     <input type="text" name="description"><br>
                                     <label for="submit-cover">Cover</label>
-                                    <input type="file" name="cover" id="submit-cover" placeholder="Choose file">
+                                    <input type="file" name="cover" id="submit-cover"
+                                        placeholder="Choose file">
                                     <button type="submit" class="modal__btn submit-game">Submit &rarr;</button>
                                 </form>
                                 <a href="#modal-closed" class="link-2"></a>
