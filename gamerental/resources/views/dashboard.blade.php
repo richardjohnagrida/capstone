@@ -4,7 +4,7 @@
 <head>
     @include('layouts/head')
 </head>
-<title>Dashboaard</title>
+<title>Dashboaaaaaaaaard</title>
 
 <body>
     <div class="container">
