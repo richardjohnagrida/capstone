@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a href="dashboard">
+                <a href="admin_dashboard">
                     <span class="material-icons-sharp">
                         dashboard_customize
                     </span>
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </main>
-        {{-- <!-- END OF MAIN --> --}} 
+        {{-- <!-- END OF MAIN --> --}}
         {{-- START OF RIGHT CONTENT --}}
         <div class="right">
             {{-- START OF TOP RIGHT --}}
