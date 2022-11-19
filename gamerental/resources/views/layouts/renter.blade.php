@@ -28,6 +28,6 @@
         </tbody>
     </table>
     <div class="showall">
-        <a href="member.html">Show All</a>
+        <a href="members">Show All</a>
     </div>
 </div>
