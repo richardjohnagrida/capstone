@@ -38,34 +38,16 @@
         <h2>Due Today</h2>
         <div class="updates">
             <div class="update">
-                <div class="profile-photo">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/292629531_3183988248535102_7139051683664337622_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGr3YEIOWfMfx1OIspeP6wIiKWwg7fpSceIpbCDt-lJx6WFojSUD7G_CFE93yAN7V_A1D-90Bmaaa3C825D-KtI&_nc_ohc=htKVaXCkJnoAX_vAoRx&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=00_AfDrfy-km54MZk4UxClhjovRczLvQz23grGY6znCBceHCg&oe=63788E25"
-                        alt="">
-                </div>
-                <div class="message">
-                    <p><b>Ceejay</b> 01-02-2022</p>
-                    <small class="text-muted">2 Minutes ago</small>
-                </div>
-            </div>
-            <div class="update">
-                <div class="profile-photo">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/292629531_3183988248535102_7139051683664337622_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGr3YEIOWfMfx1OIspeP6wIiKWwg7fpSceIpbCDt-lJx6WFojSUD7G_CFE93yAN7V_A1D-90Bmaaa3C825D-KtI&_nc_ohc=htKVaXCkJnoAX_vAoRx&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=00_AfDrfy-km54MZk4UxClhjovRczLvQz23grGY6znCBceHCg&oe=63788E25"
-                        alt="">
-                </div>
-                <div class="message">
-                    <p><b>Ceejay</b> 01-03-2022</p>
-                    <small class="text-muted">3 Minutes ago</small>
-                </div>
-            </div>
-            <div class="update">
-                <div class="profile-photo">
-                    <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/292629531_3183988248535102_7139051683664337622_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGr3YEIOWfMfx1OIspeP6wIiKWwg7fpSceIpbCDt-lJx6WFojSUD7G_CFE93yAN7V_A1D-90Bmaaa3C825D-KtI&_nc_ohc=htKVaXCkJnoAX_vAoRx&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=00_AfDrfy-km54MZk4UxClhjovRczLvQz23grGY6znCBceHCg&oe=63788E25"
-                        alt="">
-                </div>
-                <div class="message">
-                    <p><b>Ceejay</b> 01-03-2022</p>
-                    <small class="text-muted">4 Minutes ago</small>
-                </div>
+                @foreach ($dues as $due)
+                    <div class="profile-photo">
+                        <img src="{{ url('images/' . $due->img_profile) }}" alt="profile">
+                    </div>
+
+                    <div class="message">
+                        <p><b>{{ $due->first_name }}</b> Order ID: {{ $due->order_id }}</p>
+                        <small class="text-muted">details</small>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

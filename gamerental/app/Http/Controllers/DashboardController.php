@@ -17,7 +17,11 @@ class DashboardController extends Controller
 
         $profits = DB::select("SELECT SUM(total_amount) as total_amount, CURRENT_DATE FROM orders_games");
 
-        return view("dashboard", compact("rentals", "profits"));
+        $dues = DB::select("SELECT orders_games.order_id, first_name, img_profile FROM `orders_games` INNER JOIN members ON orders_games.member_id =members.member_id WHERE due_dates = CURRENT_DATE;");
+
+
+
+        return view("dashboard", compact("rentals", "profits", "dues"));
   
     }
 
