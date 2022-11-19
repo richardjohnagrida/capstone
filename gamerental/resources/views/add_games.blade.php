@@ -212,7 +212,10 @@
         </main>
         {{-- <!-- END OF MAIN --> --}}
 
+
+        <!-- RIGHT START OF -->
         <div class="right">
+            {{-- START OF TOP RIGHT --}}
             <div class="top">
                 <button id="menu-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -246,9 +249,9 @@
                     </div>
                 </div>
             </div>
-            <!-- ENF OF TOP -->
+            <!-- END OF RIGHT TOP -->
 
-            <!-- START OF FILTERING -->
+            <!--START OF RIGHT FILTERING -->
             <div class="filtering">
                 <h2>Filter</h2>
                 <div class="filters">
@@ -257,7 +260,7 @@
                     </div>
                 </div>
             </div>
-            <!-- END OF FILTERING -->
+            <!-- END OF RIGHT FILTERING -->
         </div>
         <script src="/js/index.js"></script>
 </body>
