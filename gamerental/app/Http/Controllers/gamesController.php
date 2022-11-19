@@ -73,10 +73,12 @@ class GamesController extends Controller
     public function showPlatforms(){
         $platforms = DB::select("SELECT * FROM platforms ORDER BY console_name");
 
-        return view ('add_games', compact('platforms'));
+        $games = DB::select("SELECT * FROM `games` INNER JOIN platforms ON games.console_id = platforms.console_id WHERE status ='active' ORDER BY games.console_id");
+
+        return view ('add_games', compact('platforms','games'));
     }
 
-    public function showPlatform(){
+    public function showGames(){
 
     }
     /**
@@ -97,9 +99,21 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        //
+        
+        $game = Game::where('game_id', $id)
+
+            ->update([
+                'name' =>$request->input('name'),
+                'genre' =>$request->input('genre'),
+                'description' =>$request->input('description'),
+                'price_per_week' =>$request->input('week'),
+                'price_per_month' =>$request->input('month'),
+            ]);
+
+            return redirect("add_games");
+
     }
 
     /**
@@ -109,10 +123,7 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.

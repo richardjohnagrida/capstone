@@ -5,7 +5,11 @@ use App\Http\Controllers\SignupMemberController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RentalsController;
+use App\Http\Controllers\MemberController;
+
 /*
+/*
+
 |x`--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -26,6 +30,9 @@ Route::get('/', function () {
 Route::get('/signup', [SignupMemberController::class, 'show_signup_form']);
 Route::get('/add_games', [GamesController::class, 'showPlatforms']);
 Route::get('/admin_dashboard', [DashboardController::class, 'show']);
+Route::get('/members', [MemberController::class, 'show']);
+Route::match(['put'],'add_games#modal-update-game/{id}', 'Game@update');
+
 
 
 

@@ -128,35 +128,42 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Customer Name</th>
-                            <th>Address</th>
-                            <th>Contact Number</th>
-                            <th>Email</th>
-                            <th>Status</th>
+                            <th>Platform</th>
+                            <th>Tittle</th>
+                            <th>Genre</th>
+                            <th>Available Stock</th>
+                            <th>Waiting</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Ate jo</td>
-                            <td>Jan lang</td>
-                            <td>09091234567</td>
-                            <td>atejo@gmail.com</td>
-                            <td class="success" style="color: rgb(3, 199, 3);">Active</td>
-                            <td class="primary">
-                                <a href="#modal-update-game" class="link-1" id="modal-closed">Update</a>
-                            </td>
+
+                            @foreach ($games as $game)
+                        <tr>
+                            <td>{{ $game->console_name }}</td>
+                            <td>{{ $game->name }}</td>
+                            <td>{{ $game->genre }}</td>
+                            <td>{{ $game->qty_on_hand }}</td>
+                            <td>{{ $game->waiting_qty }}</td>
+
+                            <td class="primary"> <a href="#modal-update-game/{{ $game->game_id }}" class="link-1"
+                                    id="modal-closed">Update</a></td>
                         </tr>
-                        <div class="modal-container" id="modal-update-game">
+
+
+                        <div class="modal-container" id="modal-update-game/{{ $game->game_id }}">
                             <div class="modal-game">
                                 <form action="add_games" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <h2>Add Game</h2>
+
+                                    <h2>Update Game</h2>
                                     <label>Game name</label>
-                                    <input type="text" name="name">
+                                    <input type="text" name="name" value="{{ $game->name }}">
                                     <label>Genre</label>
                                     {{-- <input type="text" name="genre"><br> --}}
                                     <div class="select-genre">
                                         <select name="genre">
+                                            <option value="RPG">{{ $game->genre }}</option>
                                             <option value="RPG">RPG</option>
                                             <option value="MMORPG">MMORPG</option>
                                             <option value="Strategy">Strategy</option>
@@ -169,6 +176,8 @@
                                     <label>Console</label>
                                     <div class="select-console">
                                         <select name="console">
+                                            <option value="RPG">{{ $game->console_name }}</option>
+
                                             @foreach ($platforms as $platform)
                                                 <option value="{{ $platform->console_id }}">
                                                     {{ $platform->console_name }}
@@ -178,17 +187,18 @@
                                     </div>
                                     <br>
                                     <label>Price per week</label>
-                                    <input type="number" name="week"><br>
+                                    <input type="number" name="week" value="{{ $game->price_per_week }}"><br>
                                     <label>Price per month</label>
-                                    <input type="number" name="month"><br>
+                                    <input type="number" name="month" value="{{ $game->price_per_month }}"><br>
                                     <label>Total Quantity</label>
-                                    <input type="number" name="qty"><br>
+                                    <input type="number" name="qty" value="{{ $game->total_qty }}"><br>
                                     <label>Description</label>
-                                    <input type="text" name="description"><br>
+                                    <input type="text" name="description" value="{{ $game->description }}"><br>
                                     <label for="submit-cover">Cover</label>
                                     <input type="file" name="cover" id="submit-cover"
                                         placeholder="Choose file">
                                     <button type="submit" class="modal__btn submit-game">Submit &rarr;</button>
+                                    @endforeach
                                 </form>
                                 <a href="#modal-closed" class="link-2"></a>
                             </div>
