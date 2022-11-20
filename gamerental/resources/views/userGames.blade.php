@@ -235,16 +235,16 @@
         @include('layouts/userFooter')
     </footer>
 
-    {{-- <!-- Scripts --> 
+    {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    {{-- <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="/js/userJS.js"></script>
-    {{-- <!-- <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script> --> --}}
+    <script src="/js/isotope.min.js"></script>
+    <script src="/js/owl-carousel.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 
 </html>

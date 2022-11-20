@@ -52,7 +52,6 @@
                             <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
-
                                 <a href="#myModal" id="myBtn">Login </a>
                             </li>
                         </ul>
@@ -60,7 +59,7 @@
 
                         {{-- START MODAL CONTENT HERE --}}
                         <div id="myModal" class="modal">
-                            <div class="modal-content text-center">
+                            <div class="modal-content">
                                 <div>
                                     <span class="close">
                                         &times;
@@ -69,17 +68,16 @@
                                 </div>
                                 @include('layouts/logo')
                                 <form action="">
-                                    <h1 style="color: black; margin:20px;">Login</h1>
+                                    <h1>Login</h1>
 
                                     <form action="profile" method="POST">
                                         @csrf
-                                        <h1 style="color: black;">Login</h1>
                                         <label for="">Username</label>
                                         <input type="text" name="" id=""><br>
                                         <label for="">password</label>
                                         <input type="password"><br>
                                         <button type="submit" class="login_btn">Login</button>
-                                        <a href="/signup_member" class="signup_btn">signup</a>
+                                        <a href="/signup_member" class="signup_btn">Be a Member</a>
                                     </form>
                             </div>
                         </div>

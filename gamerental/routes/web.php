@@ -38,8 +38,8 @@ Route::post('/search', [FilterController::class, 'result']);
 Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
+Route::get('/', [UserIndexController::class, 'showUserIndex']);
 Route::get('/', [WelcomeController::class, 'showGames']);
-Route::get('/index', [UserIndexController::class, 'showUserIndex']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 
 
@@ -53,6 +53,3 @@ Route::put('/orders/{id}', [OrdersController::class, 'update']);
 Route::post('/profile', [LoginController::class, 'UserLogin']);
 Route::post('/signup_member', [SignupMemberController::class, 'store']);
 Route::post('/add_games', [GamesController::class, 'store']);
-
-
-
