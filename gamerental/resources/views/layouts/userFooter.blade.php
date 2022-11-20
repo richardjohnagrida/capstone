@@ -3,10 +3,10 @@
         <div class="row mt-4">
             <div class="col-lg-1"></div>
             <div class="col-lg-4 col-md-4 col-12  mt-2 mb-4">
-                <h5 class="text-muted">@GAME</h5>
+                @include('layouts/logo')
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" target="_blank" href="https://twitter.com/"><svg
-                                class="bi" width="24" height="24">
+                    <li class="ms-3"><a class="link-dark" target="_blank" href="https://twitter.com/"><svg class="bi"
+                                width="24" height="24">
                                 <use xlink:href="#twitter"></use>
                             </svg></a></li>
                     <li class="ms-3"><a class="link-dark" target="_blank" href="https://instagram.com/"><svg

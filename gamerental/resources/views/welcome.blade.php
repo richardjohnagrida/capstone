@@ -3,6 +3,7 @@
 
 <head>
     @include('layouts/userHead')
+
     <title>WELCOME</title>
 </head>
 
@@ -28,8 +29,7 @@
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
                         <a href="index.html" class="logo">
-                            {{-- <!-- <img src="assets/images/logo.png" alt=""> --> --}}
-                            <h1>GAME</h1>
+                            @include('layouts/logo')
                         </a>
                         {{-- <!-- ***** Logo End ***** -->
 
@@ -98,7 +98,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="assets/images/stream-01.jpg" alt="">
+                                        {{-- <img src="assets/images/stream-01.jpg" alt=""> --}}
                                         <div class="hover-effect">
                                             <div class="content">
                                                 <div class="live">
@@ -248,15 +248,16 @@
       </div>
     </div> --> --}}
 
-
+    @include('layouts/userFooterIcons')
+    <br>
     <footer class="mx-4">
         @include('layouts/userFooter')
     </footer>
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    {{-- <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="/js/userJS.js"></script>
     <!-- <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
