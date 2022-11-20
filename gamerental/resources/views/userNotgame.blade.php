@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-
     @include('layouts/userHead')
-    <title>Games</title>
+    <title>GAMES</title>
 </head>
 
 <body>
 
-    {{-- <!-- ***** Preloader Start ***** --> --}}
-    {{-- <div id="js-preloader" class="js-preloader">
+    {{-- <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>
             <div class="dots">
@@ -19,10 +18,10 @@
                 <span></span>
             </div>
         </div>
-    </div> --}}
-    {{-- <!-- ***** Preloader End ***** --> --}}
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-    {{-- <!-- ***** Header Area Start ***** --> --}}
+    <!-- ***** Header Area Start ***** --> --}}
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -30,11 +29,11 @@
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
                         <a href="index.html" class="logo">
-                            {{-- <!-- <img src="assets/images/logo.png" alt=""> --> --}}
+                            <!-- <img src="assets/images/logo.png" alt=""> -->
                             <h1>GAME</h1>
                         </a>
-                        {{-- <!-- ***** Logo End ***** --> --}}
-                        {{-- <!-- ***** Search End ***** --> --}}
+                        {{-- <!-- ***** Logo End ***** -->
+                        <!-- ***** Search End ***** --> --}}
                         <div class="search-input">
                             <form id="search" action="#">
                                 <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
@@ -42,14 +41,15 @@
                                 <i class="fa fa-search"></i>
                             </form>
                         </div>
-                        {{-- <!-- ***** Search End ***** --> --}}
-                        {{-- <!-- ***** Menu Start ***** --> --}}
+                        {{-- <!-- ***** Search End ***** -->
+                        <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="browse.html" class="active">Games</a></li>
-                            {{-- <!-- <li><a href="details.html">Details</a></li> --> --}}
-                            {{-- <!-- <li><a href="streams.html">Streams</a></li> --> --}}
-                            <li><a href="profile.html">Profile <img
+                            <li><a href="notIndex.html">Home</a></li>
+                            <li><a href="notGame.html" class="active">Games</a></li>
+                            {{-- <!-- <li><a href="cart.html">Cart</a></li> -->
+                            <!-- <li><a href="details.html">Details</a></li> -->
+                            <!-- <li><a href="streams.html">Streams</a></li> --> --}}
+                            <li><a href="login.html">Login <img
                                         src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
                                         alt="" /></a></li>
                         </ul>
@@ -171,11 +171,11 @@
                                             vel explicabo, est qui?</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="main-button">
-                                        <a href="profile.html">Go To Profile</a>
-                                    </div>
-                                </div>
+                                {{-- <!-- <div class="col-lg-12">
+                                            <div class="main-button">
+                                                <a href="profile.html">Go To Profile</a>
+                                            </div>
+                                    </div> --> --}}
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                                         <div class="hover-effect">
                                             <div class="content">
                                                 <div class="live">
-                                                    <a href="#">Console type</a>
+                                                    <a href="login.html">Add to Cart</a>
                                                 </div>
                                                 <ul>
                                                     {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
@@ -207,9 +207,9 @@
                                     </div>
                                     <div class="down-content">
                                         {{-- <!-- <div class="avatar">
-                                        <img src="assets/images/avatar-01.jpg" alt=""
-                                            style="max-width: 46px; border-radius: 50%; float: left;">
-                                        </div> -->
+                                            <img src="assets/images/avatar-01.jpg" alt=""
+                                                style="max-width: 46px; border-radius: 50%; float: left;">
+                                            </div> -->
                                         <!-- <span><i class="fa fa-check"></i> KenganC</span> --> --}}
                                         <h5>Game name</h5>
                                     </div>
@@ -217,45 +217,37 @@
                             </div>
 
                             {{-- <!-- <div class="col-lg-12">
-                            <div class="main-button">
-                            <a href="streams.html">Discover All Streams</a>
-                            </div> --}}
+                                <div class="main-button">
+                                <a href="streams.html">Discover All Streams</a>
+                                </div>
+                            </div> --> --}}
                         </div>
                     </div>
-                </div>
-                {{-- <!-- ***** List of Game End ***** --> --}}
+                    {{-- <!-- ***** List of Game End ***** --> --}}
 
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
-
-                        <br>Design: <a href="https://templatemo.com" target="_blank"
-                            title="free CSS templates">TemplateMo</a>
-                    </p>
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+
+    @include('layouts/userFooterIcons')
+    <footer class="mx-4">
+        @include('layouts/userFooter')
     </footer>
-
 
     {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    {{-- <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script> --}}
-
+    <script src="/js/userJS.js"></script>
+    {{-- <!-- <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script> --> --}}
 
 </body>
 

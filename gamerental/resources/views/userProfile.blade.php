@@ -2,26 +2,27 @@
 <html lang="en">
 
 <head>
-    @include('layouts/heads')
+    @include('layouts/userHead')
     <title>Profile</title>
+
 </head>
 
 <body>
 
     {{-- <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <!-- ***** Preloader End ***** --> --}}
+  </div> -->
+    <!-- ***** Preloader End ***** -->
 
-    {{-- <!-- ***** Header Area Start ***** --> --}}
+    <!-- ***** Header Area Start ***** --> --}}
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -35,17 +36,18 @@
                         {{-- <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
                         <!-- <div class="search-input">
-                                <form id="search" action="#">
-                                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
-                                    onkeypress="handle" />
-                                    <i class="fa fa-search"></i>
-                                </form>
-                                </div> -->
+              <form id="search" action="#">
+                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
+                  onkeypress="handle" />
+                <i class="fa fa-search"></i>
+              </form>
+            </div> -->
                         <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="games.html">Browse</a></li>
+                            <li><a href="cart.html">Cart</a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li><a href="profile.html" class="active">Profile <img
@@ -111,9 +113,9 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <!-- ***** Banner End ***** --> --}}
+                    {{-- <!-- ***** Banner End ***** -->
 
-                    {{-- <!-- ***** Gaming Library Start ***** --> --}}
+                    <!-- ***** Gaming Library Start ***** --> --}}
                     <div class="gaming-library">
                         <div class="col-lg-12">
                             <div class="heading-section">
@@ -149,8 +151,8 @@
                                             </li>
                                             <li>
                                                 {{-- <!-- <div class="main-border-button border-no-active">
-                                                <a href="#">Rented</a>
-                                                </div> --> --}}
+                      <a href="#">Rented</a>
+                    </div> --> --}}
                                             </li>
                                         </ul>
                                     </div>
@@ -170,30 +172,25 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
-
-                        <br>Design: <a href="https://templatemo.com" target="_blank"
-                            title="free CSS templates">TemplateMo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+    @include('layouts/userFooterIcons')
+    <footer class="mx-4">
+        @include('layouts/userFooter')
     </footer>
+
 
 
     {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="userJS.js"></script>
     {{-- <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/tabs.js"></script>
     <script src="assets/js/popup.js"></script>
     <script src="assets/js/custom.js"></script> --}}
+
+
 </body>
 
 </html>
