@@ -14,7 +14,7 @@
 
             @foreach ($rentals as $rental)
                 <tr>
-                    <td>{{ $rental->first_name }} . {{ $rental->last_name }}</td>
+                    <td>{{ $rental->first_name }} {{ $rental->last_name }}</td>
                     <td>{{ $rental->name }}</td>
                     <td>{{ $rental->created_at }}</td>
                     <td>{{ $rental->due_dates }}</td>
@@ -28,6 +28,6 @@
         </tbody>
     </table>
     <div class="showall">
-        <a href="members">Show All</a>
+        <a href="orders">Show All</a>
     </div>
 </div>

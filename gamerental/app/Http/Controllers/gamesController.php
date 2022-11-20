@@ -67,19 +67,53 @@ class GamesController extends Controller
         $games->save();
 
        
-        return redirect("welcome");
+        return redirect("add_games");
     }
 
-    public function showPlatforms(){
+
+    public function showPlatforms(Request $request){
+       
+        $offset=0;
+        $limit=config("constants.options.pagination_limit");
+
+        if($request->has("page") && is_numeric($request->get("page")) ){
+
+            $offset = $limit * ($request->get("page")-1);
+            
+        }
+        $tittle = $request->input("search");
+       
+
+        if($request->input("search") != null){
+           
+            $games =  DB::select("SELECT * FROM `games` INNER JOIN platforms ON games.console_id = platforms.console_id WHERE status ='active' AND name LIKE '%$tittle%' ORDER BY games.console_id LIMIT 
+            $offset, $limit");
+        }else {
+            $games = DB::select("SELECT * FROM `games` INNER JOIN platforms ON games.console_id = platforms.console_id WHERE status ='active' ORDER BY games.console_id LIMIT 
+            $offset, $limit");
+        }
+
         $platforms = DB::select("SELECT * FROM platforms ORDER BY console_name");
 
-        $games = DB::select("SELECT * FROM `games` INNER JOIN platforms ON games.console_id = platforms.console_id WHERE status ='active' ORDER BY games.console_id");
+       
+        
+        $totalRows =  DB::select("SELECT COUNT(game_id) as totalRows FROM `games` INNER JOIN platforms ON games.console_id = platforms.console_id WHERE status ='active'");
+      
 
-        return view ('add_games', compact('platforms','games'));
+        $countRows = $totalRows[0]->totalRows;
+        $pages = ceil($countRows/$limit);
+        $activePage=$request->get("page");
+
+
+        return view ('add_games', compact('platforms','games','totalRows','pages','activePage'));
     }
 
-    public function showGames(){
+    public function filter(Request $request){
+        $filteredConsole = $request->input("fconsole");
+        $filteredGenre = $request->input("search");
+        echo $filteredConsole;
 
+        return view ('add_games');
     }
     /**
      * Display the specified resource.
@@ -87,9 +121,10 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function search(Request $request)
+
     {
-        
+       
     }
 
     
@@ -101,8 +136,9 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $game = Game::where('game_id', $id)
+       
+        $games = Game::where('game_id', $id)
+
 
             ->update([
                 'name' =>$request->input('name'),

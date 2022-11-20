@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Created by Reliese Model.
- */
-
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -28,7 +24,7 @@ class OrdersGame extends Model
 {
 	protected $table = 'orders_games';
 	protected $primaryKey = 'order_id';
-	public $timestamps = false;
+	public $timestamps = true;
 
 	protected $casts = [
 		'member_id' => 'int',

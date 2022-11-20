@@ -48,9 +48,40 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
-        return view("members");
+        $offset=0;
+        $limit=config("constants.options.pagination_limit");
+
+        if($request->has("page") && is_numeric($request->get("page")) ){
+
+            $offset = $limit * ($request->get("page")-1);
+            
+        }
+
+        $name = $request->input("search");
+       
+
+        if($request->input("search") != null){
+           
+            $members =  DB::select("SELECT * FROM `members` WHERE status ='active' AND first_name LIKE '%$name%' OR last_name LIKE '%$name%' ORDER BY last_name LIMIT 
+            $offset, $limit");
+        }else {
+            $members = DB::select("SELECT * FROM `members` WHERE status ='active' ORDER BY last_name LIMIT 
+            $offset, $limit");
+        }
+
+        $totalRows =  DB::select("SELECT COUNT(member_id) as totalRows FROM `members` WHERE status ='active'");
+
+        $countRows = $totalRows[0]->totalRows;
+        $pages = ceil($countRows/$limit);
+        $activePage=$request->get("page");
+
+        $pendings =  DB::select("SELECT * FROM `members` WHERE status ='pending'");
+
+
+        return view ('members', compact('members','totalRows','pages','activePage', 'pendings'));
+
     }
 
     /**
@@ -59,10 +90,34 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        //
+          $status =$request->input('status');
+          if($status != null){
+        $members = Member::where('member_id', $id)
+            ->update([
+                'email' =>$request->input('email'),
+                'contact_number' =>$request->input('contact'),
+                'address' =>$request->input('address'),
+                'status' =>$request->input('status'),
+                
+            ]);
+        }
+
+        else{
+            $members = Member::where('member_id', $id)
+            ->update([
+          
+                'status' =>'active',
+                
+            ]);
+        }
+            return redirect("members");
+
     }
+
+
+
 
     /**
      * Update the specified resource in storage.
@@ -71,10 +126,7 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+  
 
     /**
      * Remove the specified resource from storage.

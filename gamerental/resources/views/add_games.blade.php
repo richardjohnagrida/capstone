@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <head>
     @include('layouts/head')
@@ -68,8 +69,8 @@
 
             <div class="member search">
                 <h2>Games</h2>
-                <form action="" class="search-bar">
-                    <input type="text" placeholder="Search" name="">
+                <form action="add_games" class="search-bar">
+                    <input type="text" placeholder="Search" name="search">
                     <button type="submit"><span class="material-icons-sharp">
                             search
                         </span></button>
@@ -147,76 +148,80 @@
                             <td>{{ $game->qty_on_hand }}</td>
                             <td>{{ $game->waiting_qty }}</td>
 
-                            <td class="primary"> <a href="#modal-update-game/{{ $game->game_id }}" class="link-1"
+                            <td class="primary"> <a href="#update/{{ $game->game_id }}" class="link-1"
                                     id="modal-closed">Update</a></td>
                         </tr>
-
-
-                        <div class="modal-container" id="modal-update-game/{{ $game->game_id }}">
-                            <div class="modal-game">
-                                <form action="add_games" method="POST" enctype="multipart/form-data">
-                                    @csrf
-
-                                    <h2>Update Game</h2>
-                                    <label>Game name</label>
-                                    <input type="text" name="name" value="{{ $game->name }}">
-                                    <label>Genre</label>
-                                    {{-- <input type="text" name="genre"><br> --}}
-                                    <div class="select-genre">
-                                        <select name="genre">
-                                            <option value="RPG">{{ $game->genre }}</option>
-                                            <option value="RPG">RPG</option>
-                                            <option value="MMORPG">MMORPG</option>
-                                            <option value="Strategy">Strategy</option>
-                                            <option value="Sports">Sports</option>
-                                            <option value="Sports">Simulation</option>
-                                            <option value="Adventure">Adventure</option>
-                                            <option value="Adventure">Puzzle</option>
-                                        </select>
-                                    </div>
-                                    <label>Console</label>
-                                    <div class="select-console">
-                                        <select name="console">
-                                            <option value="RPG">{{ $game->console_name }}</option>
-
-                                            @foreach ($platforms as $platform)
-                                                <option value="{{ $platform->console_id }}">
-                                                    {{ $platform->console_name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <br>
-                                    <label>Price per week</label>
-                                    <input type="number" name="week" value="{{ $game->price_per_week }}"><br>
-                                    <label>Price per month</label>
-                                    <input type="number" name="month" value="{{ $game->price_per_month }}"><br>
-                                    <label>Total Quantity</label>
-                                    <input type="number" name="qty" value="{{ $game->total_qty }}"><br>
-                                    <label>Description</label>
-                                    <input type="text" name="description" value="{{ $game->description }}"><br>
-                                    <label for="submit-cover">Cover</label>
-                                    <input type="file" name="cover" id="submit-cover"
-                                        placeholder="Choose file">
-                                    <button type="submit" class="modal__btn submit-game">Submit &rarr;</button>
-                                    @endforeach
-                                </form>
-                                <a href="#modal-closed" class="link-2"></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </tbody>
                 </table>
+
+                @foreach ($games as $game)
+                    <div class="modal-container" id="update/{{ $game->game_id }}">
+                        <div class="modal-game">
+                            <p>{{ $game->game_id }}</p>
+                            <form action="{{ route('games.update', ['id' => $game->game_id]) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <h2>Update Game</h2>
+                                <label>Game name</label>
+                                <input type="text" name="name" value="{{ $game->name }}">
+                                <label>Genre</label>
+                                {{-- <input type="text" name="genre"><br> --}}
+                                <div class="select-genre">
+                                    <select name="genre">
+                                        <option value="RPG">{{ $game->genre }}</option>
+                                        <option value="RPG">RPG</option>
+                                        <option value="MMORPG">MMORPG</option>
+                                        <option value="Strategy">Strategy</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Sports">Simulation</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Adventure">Puzzle</option>
+                                    </select>
+                                </div>
+                                <label>Console</label>
+                                <div class="select-console">
+                                    <select name="console">
+                                        <option value="RPG">{{ $game->console_name }}</option>
+
+                                        @foreach ($platforms as $platform)
+                                            <option value="{{ $platform->console_id }}">
+                                                {{ $platform->console_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <br>
+                                <label>Price per week</label>
+                                <input type="number" name="week" value="{{ $game->price_per_week }}"><br>
+                                <label>Price per month</label>
+                                <input type="number" name="month" value="{{ $game->price_per_month }}"><br>
+                                <label>Total Quantity</label>
+                                <input type="number" name="qty" value="{{ $game->total_qty }}"><br>
+                                <label>Description</label>
+                                <input type="text" name="description" value="{{ $game->description }}"><br>
+                                <label for="submit-cover">Cover</label>
+                                <input type="file" name="cover" id="submit-cover" placeholder="Choose file">
+                                <button type="submit" class="modal__btn submit-game">Submit &rarr;</button>
+
+                            </form>
+                            <a href="#modal-closed" class="link-2"></a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="page-container">
                 <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
+                    <a href="?page=1">&laquo;</a>
+                    @for ($x = 1; $x <= $pages; $x++)
+                        <a href="?page={{ $x }}"
+                            class="
+                        @if ($activePage == $x) active @endif
+                        ">
+                            {{ $x }}</a>
+                    @endfor
+                    <a href="?page={{ $pages }}">&raquo;</a>
                 </div>
             </div>
 
@@ -264,15 +269,39 @@
                 <h2>Filter</h2>
                 <div class="filters">
                     <div class="filter">
-                        <label for="">Console</label>
+                        <form action="search" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <label>Console</label>
+                            <div class="select-console">
+                                <select name="fconsole">
+
+                                    @foreach ($platforms as $platform)
+                                        <option value="{{ $platform->console_id }}">
+                                            {{ $platform->console_name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <label>Genre</label><br>
+                                <select name="fgenre">
+                                    <option value=""></option>
+                                    <option value="RPG">RPG</option>
+                                    <option value="MMORPG">MMORPG</option>
+                                    <option value="Strategy">Strategy</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Sports">Simulation</option>
+                                    <option value="Adventure">Adventure</option>
+                                    <option value="Adventure">Puzzle</option>
+                                </select><br>
+                                <button type="submit">Filter</button>
+                        </form>
+
                     </div>
                 </div>
+                <!-- END OF RIGHT FILTERING -->
             </div>
-            <!-- END OF RIGHT FILTERING -->
+            {{-- <!-- END OF MAIN --> --}}
         </div>
-        {{-- <!-- END OF MAIN --> --}}
-    </div>
-    <script src="/js/index.js"></script>
+        <script src="/js/index.js"></script>
 </body>
 
 </html>

@@ -6,6 +6,8 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RentalsController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\OrdersController;
 
 /*
 /*
@@ -30,13 +32,20 @@ Route::get('/', function () {
 Route::get('/signup', [SignupMemberController::class, 'show_signup_form']);
 Route::get('/add_games', [GamesController::class, 'showPlatforms']);
 Route::get('/admin_dashboard', [DashboardController::class, 'show']);
+Route::post('/search', [FilterController::class, 'result']);
 Route::get('/members', [MemberController::class, 'show']);
-Route::match(['put'],'add_games#modal-update-game/{id}', 'Game@update');
+Route::get('/approval/{id}', [ApprovalController::class, 'show']);
+Route::get('/orders', [OrdersController::class, 'show']);
 
+
+Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");
+Route::put('/members/{id}', [MemberController::class, 'update']);
+Route::put('/orders/{id}', [OrdersController::class, 'update']);
 
 
 
 Route::post('/signup_member', [SignupMemberController::class, 'store']);
 Route::post('/add_games', [GamesController::class, 'store']);
+
 
 

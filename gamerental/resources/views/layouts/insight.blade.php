@@ -12,6 +12,10 @@
                 @foreach ($profits as $profit)
                     <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b></h1>
                 @endforeach
+
+                @foreach ($months as $month)
+                    <p> &#8369<b class="num" data-val={{ $month->months }}></b> </>
+                @endforeach
             </div>
             <div class="progress">
                 <!-- <svg>
@@ -31,8 +35,13 @@
         </span>
         <div class="middle">
             <div class="left">
-                <h3>Total Ren</h3>
-                <h1>$<b class="num" data-val="1000">000</b></h1>
+                <h3>Number of Rentals</h3>
+                @foreach ($rents as $rent)
+                    <h1><small>Daily Rentals</small> <b class="num" data-val={{ $rent->rents }}> </b> </>
+                @endforeach
+                @foreach ($monthlyRents as $monthlyRent)
+                    <h1><small>Monthly Rentals</small> {{ $monthlyRent->mrents }} </>
+                @endforeach
             </div>
             <div class="progress">
                 <!-- <svg>
