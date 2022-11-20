@@ -9,6 +9,9 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserIndexController;
+use App\Http\Controllers\LogoutController;
 
 /*
 /*
@@ -36,6 +39,10 @@ Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
 Route::get('/', [WelcomeController::class, 'showGames']);
+Route::get('/', [UserIndexController::class, 'showUserIndex']);
+Route::get('/logout', [LogoutController::class, 'logout']);
+
+
 
 
 Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");
@@ -43,7 +50,7 @@ Route::put('/members/{id}', [MemberController::class, 'update']);
 Route::put('/orders/{id}', [OrdersController::class, 'update']);
 
 
-
+Route::post('/profile', [LoginController::class, 'UserLogin']);
 Route::post('/signup_member', [SignupMemberController::class, 'store']);
 Route::post('/add_games', [GamesController::class, 'store']);
 

@@ -72,6 +72,10 @@
                                 @include('layouts/logo')
                                 <form action="">
                                     <h1 style="color: black; margin:20px;">Login</h1>
+
+                                <form action="profile" method="POST">
+                                    @csrf
+                                    <h1 style="color: black;">Login</h1>
                                     <label for="">Username</label>
                                     <input type="text" name="" id=""><br>
                                     <label for="">password</label>
