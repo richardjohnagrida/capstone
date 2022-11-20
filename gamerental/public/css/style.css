@@ -17,6 +17,12 @@
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
 
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
@@ -937,6 +943,65 @@ main .recent-renter a {
     font-size: 14px;
     font-family: poppins, sans-serif;
 }
+.recent-renter table{
+    margin-top: 30px;
+}
+.filter select {
+    background: var(--color-light);
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    color: var(--color-dark);
+    padding: 5px 10px;
+    width: 270px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+}
+
+.filters .select-console::after {
+    content: '\25BC';
+    position: absolute;
+    top: 21%;
+    right: 4%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+.filters .select-genre::after {
+    content: '\25BC';
+    position: absolute;
+    top: 29%;
+    right: 4%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+.select-genre button {
+    margin-top: 10px;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--color-primary);
+    border-radius: 100px;
+}
+
+.modal-game .select-genre::after {
+    content: '\25BC';
+    position: absolute;
+    top: 22.5%;
+    right: 10%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
 
 .modal-add-game {
     width: 30rem;
@@ -1025,9 +1090,8 @@ input[type=file] {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 10px;
-
     background-color: var(--color-primary);
     border-radius: 100px;
     width: 100px;
@@ -1152,6 +1216,21 @@ input[type=number] {
     font-family: poppins, sans-serif;
 }
 
+.filter input[type=select] {
+    background: var(--color-light);
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    /* box-shadow: 0 0 3px #DDD inset; */
+    color: var(--color-dark);
+    padding: 5px 10px;
+    width: 360px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+}
+
 .modal-add-game .select-genre::after {
     content: '\25BC';
     position: absolute;
@@ -1174,7 +1253,40 @@ input[type=number] {
     pointer-events: none;
 }
 
+.modal-game .select-genre::after {
+    content: '\25BC';
+    position: absolute;
+    top: 24.5%;
+    right: 10%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
 
+
+.modal-game .select-console::after {
+    content: '\25BC';
+    position: absolute;
+    top: 33.5%;
+    right: 10%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+
+.modal .select-rental::after {
+    content: '\25BC';
+    position: absolute;
+    top: 63%;
+    right: 10%;
+    padding: 1em;
+    /* background-color: #34495e; */
+    transition: .25s all ease;
+    pointer-events: none;
+}
 
 /* MEMBER SEARCH BAR*/
 .member {
@@ -1404,6 +1516,16 @@ input[type=number] {
         pointer-events: none;
     }
 
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 71.5%;
+        right: 9%;
+        padding: 1em;
+        transition: .25s all ease;
+        pointer-events: none;
+    }
+
     .update-btn {
         background-color: var(--color-primary);
         color: white;
@@ -1430,6 +1552,41 @@ input[type=number] {
         left: 22%;
     }
 
+    .filter select {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 195px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
+    .filters .select-console::after {
+        content: '\25BC';
+        position: absolute;
+        top: 13.5%;
+        right: 6%;
+        padding: 1em;
+        /* background-color: #34495e; */
+        transition: .25s all ease;
+        pointer-events: none;
+    }
+
+    .filters .select-genre::after {
+        content: '\25BC';
+        position: absolute;
+        top: 18.8%;
+        right: 6%;
+        padding: 1em;
+        /* background-color: #34495e; */
+        transition: .25s all ease;
+        pointer-events: none;
+    }
 
 }
 

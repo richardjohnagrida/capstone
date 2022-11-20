@@ -12,8 +12,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="/images/carbon_game-console.png" alt="">
-                    <h2>GA<span class="danger">ME</span> </h2>
+                    @include('layouts/logo')
                 </div>
                 <div class="close" id="close-btn">
                     <span class="material-icons-sharp">
@@ -52,7 +51,7 @@
                     </span>
                     <h3>Create Order</h3>
                 </a>
-                <a href="">
+                <a href="/">
                     <span class="material-icons-sharp">
                         logout
                     </span>
@@ -82,7 +81,7 @@
                         <tr>
                             <th>Order Number</th>
                             <th>Customer Name</th>
-                            <th>Game Tittle</th>
+                            <th>Game Title</th>
                             <th>Date Rented</th>
                             <th>Due</th>
                         </tr>
@@ -116,7 +115,7 @@
                                 <input type="text" value="{{ $rental->first_name }} {{ $rental->last_name }}"
                                     disabled>
 
-                                <div class="select" value="{{ $rental->status }}">
+                                <div class="select-rental" value="{{ $rental->status }}">
                                     <select name="status" id="">
                                         <option value="active">Active</option>
                                         <option value="fulfilled">Fullfiled</option>
@@ -190,12 +189,12 @@
                 </div>
                 <div class="profile">
                     <div class="info">
-                        <p>Hi, <b>Ceejay</b></p>
+                        <p>Hi, <b>{{ Session::get('first_name') }}</b></p>
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-                        <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/292629531_3183988248535102_7139051683664337622_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGr3YEIOWfMfx1OIspeP6wIiKWwg7fpSceIpbCDt-lJx6WFojSUD7G_CFE93yAN7V_A1D-90Bmaaa3C825D-KtI&_nc_ohc=htKVaXCkJnoAX_vAoRx&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=00_AfDrfy-km54MZk4UxClhjovRczLvQz23grGY6znCBceHCg&oe=63788E25"
-                            alt="">
+        
+                        <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile" class="profile-photo">
                     </div>
                 </div>
             </div>
@@ -239,4 +238,8 @@
             {{-- END OF RIGHT APPROVAL --}}
             {{-- END OF RIGHT CONTENT --}}
         </div>
+        <script src="/js/index.js"></script>
+
 </body>
+
+</html>

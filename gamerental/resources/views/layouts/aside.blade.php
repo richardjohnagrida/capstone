@@ -1,8 +1,9 @@
 <aside>
     <div class="top">
         <div class="logo">
-            <img src="/images/carbon_game-console.png" alt="">
-            <h2>GA<span class="danger">ME</span> </h2>
+            {{-- <img src="/images/carbon_game-console.png" alt="">
+            <h2>GA<span class="danger">ME</span> </h2> --}}
+            @include('layouts/logo')
         </div>
         <div class="close" id="close-btn">
             <span class="material-icons-sharp">

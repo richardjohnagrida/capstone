@@ -12,8 +12,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="/images/carbon_game-console.png" alt="">
-                    <h2>GA<span class="danger">ME</span> </h2>
+                    @include('layouts/logo')
                 </div>
                 <div class="close" id="close-btn">
                     <span class="material-icons-sharp">
@@ -52,7 +51,7 @@
                     </span>
                     <h3>Create Order</h3>
                 </a>
-                <a href="">
+                <a href="/">
                     <span class="material-icons-sharp">
                         logout
                     </span>
@@ -80,7 +79,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Profile Picture</th>
+                            <th style="float:left">Profile Picture</th>
                             <th>Customer Name</th>
                             <th>Contact Number</th>
                             <th>Email</th>
@@ -90,8 +89,8 @@
                     <tbody>
                         @foreach ($members as $member)
                             <tr>
-                                <td><img src="{{ url('images/' . $member->img_profile) }}" alt="profile"
-                                        class="profile-photo"></td>
+                                <td style="padding:0px 25px;"><img src="{{ url('images/' . $member->img_profile) }}"
+                                        alt="profile" class="profile-photo"></td>
                                 <td>{{ $member->last_name }}, {{ $member->first_name }}</td>
                                 <td>{{ $member->contact_number }}</td>
                                 <td>{{ $member->email }}</td>
@@ -111,7 +110,7 @@
                         <div class="modal">
                             <form action="/members/{{ $member->member_id }}" method="POST">
                                 @csrf
-                                @method('PUT');
+                                @method('PUT')
                                 <h1 class="member-info" style="margin:10px 0px 20px 0px;">Member Info</h1>
                                 <label for="" placeholder="CustomerName">Customer Name</label>
                                 <input type="text" value="{{ $member->first_name }} {{ $member->last_name }}"
@@ -182,12 +181,13 @@
                 </div>
                 <div class="profile">
                     <div class="info">
-                        <p>Hi, <b>Ceejay</b></p>
+                        <p>Hi, <b>{{ Session::get('first_name') }}</b></p>
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-                        <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/292629531_3183988248535102_7139051683664337622_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGr3YEIOWfMfx1OIspeP6wIiKWwg7fpSceIpbCDt-lJx6WFojSUD7G_CFE93yAN7V_A1D-90Bmaaa3C825D-KtI&_nc_ohc=htKVaXCkJnoAX_vAoRx&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&oh=00_AfDrfy-km54MZk4UxClhjovRczLvQz23grGY6znCBceHCg&oe=63788E25"
-                            alt="">
+
+                        <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
+                            class="profile-photo">
                     </div>
                 </div>
             </div>
@@ -243,14 +243,19 @@
                             style="width:20%">
 
                         <button type="submit" class="modal__btn update-btn">Approve &rarr;</button>
+                    </form>
+
+                    <a href="#modal-closed" class="link-2"></a>
+
                 </div>
-                </form>
-                <a href="#modal-closed" class="link-2"></a>
             </div>
+        @endforeach
+
+        {{-- END OF RIGHT APPROVAL --}}
+        {{-- END OF RIGHT CONTENT --}}
     </div>
-    @endforeach
-    </div>
-    {{-- END OF RIGHT APPROVAL --}}
-    {{-- END OF RIGHT CONTENT --}}
-    </div>
+    <script src="/js/index.js"></script>
+
 </body>
+
+</html>
