@@ -39,7 +39,7 @@ Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
 Route::get('/', [WelcomeController::class, 'showGames']);
-Route::get('/', [UserIndexController::class, 'showUserIndex']);
+Route::get('/index', [UserIndexController::class, 'showUserIndex']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 
 
