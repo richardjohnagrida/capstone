@@ -8,8 +8,8 @@ class UserIndexController extends Controller
 {
     public function showUserIndex()
     {
-        return view('userIndex');
+        return view('/profile');
     }
 
-    
+   
 }
