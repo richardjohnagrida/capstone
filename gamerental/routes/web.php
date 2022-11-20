@@ -8,6 +8,7 @@ use App\Http\Controllers\RentalsController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 /*
@@ -22,9 +23,7 @@ use App\Http\Controllers\OrdersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 // 
 // Route::resource('/members', SignupMemberController::class);
 
@@ -36,6 +35,7 @@ Route::post('/search', [FilterController::class, 'result']);
 Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
+Route::get('/', [WelcomeController::class, 'showGames']);
 
 
 Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");

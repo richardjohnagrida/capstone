@@ -47,6 +47,7 @@
                         <ul class="nav">
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="notGame.html">games</a></li>
+
                             {{-- <!-- <li><a href="cart.html">Cart</a></li> -->
                             <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
@@ -132,52 +133,29 @@
                     <!-- ***** About Start ***** --> --}}
                     <div class="most-popular text-center mb-5">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 ">
                                 <div class="heading-section text-center">
-                                    <h4>About</h4>
+                                    <h4>New Games</h4>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                                alt="" />
-                                            <h4>Ate Jo<br /><span>Back-End</span></h4>
-                                            <ul>
-                                            </ul>
+                                    @foreach ($games as $game)
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="{{ url('images/' . $game->cover_img) }}" alt="profile"
+                                                    class="profile-photo" style="width:100%">
+                                                <h4>{{ $game->name }}<br /><span>{{ $game->genre }}</span></h4>
+                                                <ul>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                                alt="" />
-                                            <h4>ate jo<br /><span>Back-End</span></h4>
-                                            <ul>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                                alt="" />
-                                            <h4>ate jo<br /><span>Back-End</span></h4>
-                                            <ul>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                                alt="" />
-                                            <h4>ate jo<br /><span>Back-End</span></h4>
-                                            <ul>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <!-- ***** About End ***** -->
+                </div>
+            </div>
+            {{-- <!-- ***** About End ***** -->
                     <!-- ***** Gaming Library Start ***** -->
                     <!-- <div class="gaming-library">
                         <div class="col-lg-12">
@@ -229,9 +207,9 @@
                         </div>
                     </div> -->
                     <!-- ***** Gaming Library End ***** --> --}}
-                </div>
-            </div>
         </div>
+    </div>
+    </div>
     </div>
 
     {{-- <!-- <div class="container">
