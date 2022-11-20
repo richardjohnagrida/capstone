@@ -1,7 +1,7 @@
 <div class="member search">
     <h1>Member</h1>
     <form action="" class="search-bar">
-        <input type="text" placeholder="Search" name="">
+        <input type="text" placeholder="Search" name="search">
         <button type="submit"><span class="material-icons-sharp">
                 search
             </span></button>
@@ -20,16 +20,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Ate jo</td>
-                <td>Jan lang</td>
-                <td>09091234567</td>
-                <td>atejo@gmail.com</td>
-                <td class="success" style="color: rgb(3, 199, 3);">Active</td>
-                <td class="primary">
-                    <a href="#modal-opened" class="link-1" id="modal-closed">Update</a>
-                </td>
-            </tr>
+            @foreach ($members as $member)
+                <tr>
+                    <img src="{{ url('images/' . $member->img_profile) }}" alt="profile">
+                    <td>{{ $member->last_name }}.{{ $member->first_name }}</td>
+                    <td>{{ $member->address }}</td>
+                    <td>{{ $member->contact_number }}</td>
+                    <td>{{ $member->emaiml }}</td>
+                    <td class="success">Active</td>
+
+
+                    <td class="primary"> <a href="#update/{{ $member->member_id }}" class="link-1"
+                            id="modal-closed">Update</a></td>
+                </tr>
+            @endforeach
             <div class="modal-container" id="modal-opened">
                 <div class="modal">
                     <form action="" class="modal-info">
