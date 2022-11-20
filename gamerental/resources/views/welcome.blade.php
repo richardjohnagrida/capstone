@@ -52,7 +52,6 @@
                             <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
-
                                 <a href="#myModal" id="myBtn">Login </a>
                             </li>
                         </ul>
@@ -60,7 +59,7 @@
 
                         {{-- START MODAL CONTENT HERE --}}
                         <div id="myModal" class="modal">
-                            <div class="modal-content text-center">
+                            <div class="modal-content">
                                 <div>
                                     <span class="close">
                                         &times;

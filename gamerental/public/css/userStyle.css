@@ -15284,18 +15284,80 @@ input::-webkit-file-upload-button {
     margin: auto;
     padding: 20px;
     border: 1px solid #27292a;
-    width: 30%;
+    width: 26%;
     color: #fff;
+}
+
+.modal-content h1 {
+    color: white;
+    margin: 20px;
+    text-align: center;
+    font-family: poppins, sans-serif;
+
+}
+
+input[type=text] {
+    background: #1e1e1e;
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    /* box-shadow: 0 0 3px #DDD inset; */
+    color: #fff;
+    padding: 5px 10px;
+    width: 360px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+    margin-bottom: 10px;
+}
+
+input[type=password] {
+    background: #1e1e1e;
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    /* box-shadow: 0 0 3px #DDD inset; */
+    color: #fff;
+    padding: 5px 10px;
+    width: 360px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+    margin-bottom: 10px;
+
 }
 
 .login_btn {
-    width: 100px;
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
     border-radius: 100px;
     background-color: #00a2ff;
     color: #fff;
-
+    border: 1px solid #00a2ff;
 }
 
+
+
+.signup_btn {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #00a2ff;
+}
+
+.signup_btn:hover {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #0378bd;
+}
 
 /* The Close Button */
 .close {
@@ -15313,6 +15375,63 @@ input::-webkit-file-upload-button {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+
+@media (max-width: 1200px) {
+    .modal-content {
+        background-color: #27292a;
+        margin-top: 140px;
+        padding: 20px;
+        border: 1px solid #27292a;
+        width: 60%;
+        color: #fff;
+    }
+
+    .login_btn {
+        margin-left: 55px;
+        margin-top: 10px;
+        width: 120px;
+        height: 40px;
+        border-radius: 100px;
+        background-color: #00a2ff;
+        color: #fff;
+        border: 1px solid #00a2ff;
+    }
+
+    input[type=text] {
+        background: #1e1e1e;
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: #fff;
+        padding: 5px 10px;
+        width: 280px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+        margin-bottom: 20px;
+    }
+
+    input[type=password] {
+        background: #1e1e1e;
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: #fff;
+        padding: 5px 10px;
+        width: 280px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+        margin-bottom: 10px;
+
+    }
 }
 
 @media (max-width: 767px) {
@@ -15351,4 +15470,48 @@ input::-webkit-file-upload-button {
         color: #fff;
     }
 
+    label {
+        text-align: left;
+    }
+
+    .login_btn {
+        margin-top: 10px;
+        margin-left: 0px;
+        width: 120px;
+        height: 40px;
+        border-radius: 100px;
+        background-color: #00a2ff;
+        color: #fff;
+        border: 1px solid #00a2ff;
+    }
+
+    input[type=text] {
+        background: #1e1e1e;
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: #fff;
+        padding: 5px 10px;
+        width: 280px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
+    input[type=password] {
+        background: #1e1e1e;
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: #fff;
+        padding: 5px 10px;
+        width: 280px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
 }
