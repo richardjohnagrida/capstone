@@ -10,8 +10,8 @@ use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\UserIndexController;
-use App\Http\Controllers\LogoutController;
+// use App\Http\Controllers\UserIndexController;
+// use App\Http\Controllers\LogoutController;
 
 /*
 /*
@@ -39,8 +39,7 @@ Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
 Route::get('/', [WelcomeController::class, 'showGames']);
-Route::get('/', [UserIndexController::class, 'showUserIndex']);
-Route::get('/logout', [LogoutController::class, 'logout']);
+
 
 
 
