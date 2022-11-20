@@ -71,16 +71,16 @@
                                 <form action="">
                                     <h1 style="color: black; margin:20px;">Login</h1>
 
-                                <form action="profile" method="POST">
-                                    @csrf
-                                    <h1 style="color: black;">Login</h1>
-                                    <label for="">Username</label>
-                                    <input type="text" name="" id=""><br>
-                                    <label for="">password</label>
-                                    <input type="password"><br>
-                                    <button type="submit" class="login_btn">Login</button>
-                                    <a href="/signup_member" class="signup_btn">signup</a>
-                                </form>
+                                    <form action="profile" method="POST">
+                                        @csrf
+                                        <h1 style="color: black;">Login</h1>
+                                        <label for="">Username</label>
+                                        <input type="text" name="" id=""><br>
+                                        <label for="">password</label>
+                                        <input type="password"><br>
+                                        <button type="submit" class="login_btn">Login</button>
+                                        <a href="/signup_member" class="signup_btn">signup</a>
+                                    </form>
                             </div>
                         </div>
 

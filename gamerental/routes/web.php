@@ -41,6 +41,8 @@ Route::get('/orders', [OrdersController::class, 'show']);
 Route::get('/', [WelcomeController::class, 'showGames']);
 Route::get('/profile', [UserIndexController::class, 'showUserIndex']);
 
+Route::get('/index', [UserIndexController::class, 'showUserIndex']);
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 
 

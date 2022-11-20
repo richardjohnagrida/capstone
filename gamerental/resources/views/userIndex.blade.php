@@ -48,7 +48,7 @@
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="games.html">games</a></li>
                             <li><a href="cart.html">Cart</a></li>
-                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="/">Logout</a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
