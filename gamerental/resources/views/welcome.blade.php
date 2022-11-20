@@ -52,7 +52,7 @@
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
 
-                                <a href="#modal-opened" class="link-1" id="myBtn">Login <img
+                                <a href="#myModal" id="myBtn">Login <img
                                         src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
                                         alt="" /></a>
                             </li>
@@ -61,16 +61,19 @@
 
                         {{-- START MODAL CONTENT HERE --}}
                         <div id="myModal" class="modal">
-                            <div class="modal-content">
+                            <div class="modal-content text-center">
+                                <div class="close">
+                                    &times;
+                                </div>
+                                @include('layouts/logo')
                                 <form action="">
-                                    <span class="close">&times;</span>
                                     <h1 style="color: black;">Login</h1>
                                     <label for="">Username</label>
                                     <input type="text" name="" id=""><br>
                                     <label for="">password</label>
                                     <input type="password"><br>
-                                    <button type="submit">Login</button>
-                                    <button type="submit">signup</button>
+                                    <button type="submit" class="login_btn">Login</button>
+                                    <button type="submit" class="signup_btn">signup</button>
                                 </form>
                             </div>
                             {{-- END MODAL CONTENT HERE --}}
@@ -274,16 +277,16 @@
         @include('layouts/userFooter')
     </footer>
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
+    {{-- <!-- Scripts -->
+    <!-- Bootstrap core JavaScript --> --}}
     {{-- <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="/js/userJS.js"></script>
-    <!-- <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script> -->
+    <script src="/js/isotope.min.js"></script>
+    <script src="/js/owl-carousel.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 
 </html>

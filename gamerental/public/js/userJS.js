@@ -1,8 +1,9 @@
+// select all
 $(".selectall").click(function () {
     $(".individual").prop("checked", $(this).prop("checked"));
 });
 
-
+// Login modal
 var modal = document.getElementById("myModal");
 
 var btn = document.getElementById("myBtn");
@@ -22,3 +23,4 @@ window.onclick = function (event) {
         modal.style.display = "none"
     }
 }
+
