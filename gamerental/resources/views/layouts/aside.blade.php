@@ -41,7 +41,7 @@
             </span>
             <h3>Create Order</h3>
         </a>
-        <a href="">
+        <a href="/">
             <span class="material-icons-sharp">
                 logout
             </span>

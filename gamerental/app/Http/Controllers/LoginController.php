@@ -24,6 +24,7 @@ class LoginController extends Controller
                 $request->session()->put('user_type', $user -> user_type);
                 $request->session()->put('first_name', $user -> first_name);
                 $request->session()->put('last_name', $user -> last_name);
+                $request->session()->put('img_profile', $user -> img_profile);
 
                 return redirect('/profile');
             }else{
@@ -37,7 +38,13 @@ class LoginController extends Controller
     public function showProfile(){
         if (Session::get("user_type") == "member"){
             return view('/UserIndex');
-        }else{
+        }
+
+        elseif(Session::get("user_type") == "admin"){
+            return redirect('/admin_dashboard');
+        }
+        
+        else{
             return "Not logged in!";
         }
 
