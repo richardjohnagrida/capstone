@@ -52,7 +52,10 @@
                             <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
-                                <a href="#myModal" id="myBtn">Login </a>
+                                <a href="#myModal" id="myBtn">Login <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/800px-Default_pfp.svg.png"
+                                        alt=""></a>
+
                             </li>
                         </ul>
                         {{-- <button>Open Modal</button> --}}
@@ -68,7 +71,7 @@
                                 </div>
                                 @include('layouts/logo')
 
-                                <h1 style="color: black; margin:20px;">Login</h1>
+                                <h1>Login</h1>
 
                                 <form action="profile" method="POST">
                                     @csrf
