@@ -45,7 +45,6 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 
 
 
-
 Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");
 Route::put('/members/{id}', [MemberController::class, 'update']);
 Route::put('/orders/{id}', [OrdersController::class, 'update']);
