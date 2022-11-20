@@ -10,6 +10,8 @@ use App\Models\Member;
 use App\Models\Orderitem;
 use App\Models\Ordersgames;
 use DB;
+use Illuminate\Support\Facades\Hash;
+use Session;
 
 class WelcomeController extends Controller
 {
@@ -19,4 +21,7 @@ class WelcomeController extends Controller
 
         return view("welcome", compact("games"));
     }
+
+  
 }
+
