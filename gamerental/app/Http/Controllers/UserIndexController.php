@@ -10,4 +10,6 @@ class UserIndexController extends Controller
     {
         return view('userIndex');
     }
+
+    
 }
