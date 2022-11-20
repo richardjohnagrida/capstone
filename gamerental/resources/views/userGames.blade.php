@@ -81,7 +81,7 @@
                                         <div class="thumb">
                                             <img src="assets/images/featured-01.jpg" alt="">
                                             <div class="hover-effect">
-                                                <h6>2.4K Streaming</h6>
+                                                <h6>2.4K Rented</h6>
                                             </div>
                                         </div>
                                         <h4>Barbie<br><span>249K Rented</span></h4>
