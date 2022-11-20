@@ -15217,7 +15217,7 @@ input::-webkit-file-upload-button {
     }
 
     .nav {
-        background-color: black;
+        background-color: #1f2122;
     }
 
     .game-info {
@@ -15287,8 +15287,6 @@ input::-webkit-file-upload-button {
     width: 30%;
     color: #fff;
 }
-
-
 
 .login_btn {
     width: 100px;

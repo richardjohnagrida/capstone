@@ -61,10 +61,15 @@
                         {{-- START MODAL CONTENT HERE --}}
                         <div id="myModal" class="modal">
                             <div class="modal-content text-center">
-                                <div class="close">
-                                    &times;
+                                <div>
+                                    <span class="close">
+                                        &times;
+                                    </span>
+
                                 </div>
                                 @include('layouts/logo')
+                                <form action="">
+                                    <h1 style="color: black; margin:20px;">Login</h1>
 
                                 <form action="profile" method="POST">
                                     @csrf
@@ -74,12 +79,12 @@
                                     <label for="">password</label>
                                     <input type="password"><br>
                                     <button type="submit" class="login_btn">Login</button>
-                                    <button type="submit" class="signup_btn">signup</button>
+                                    <a href="/signup_member" class="signup_btn">signup</a>
                                 </form>
                             </div>
-                            {{-- END MODAL CONTENT HERE --}}
-
                         </div>
+
+                        {{-- END MODAL CONTENT HERE --}}
                         <a class="menu-trigger">
                             <span>Menu</span>
                         </a>
