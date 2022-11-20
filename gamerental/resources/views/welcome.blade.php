@@ -53,9 +53,7 @@
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
 
-                                <a href="#myModal" id="myBtn">Login <img
-                                        src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                        alt="" /></a>
+                                <a href="#myModal" id="myBtn">Login </a>
                             </li>
                         </ul>
                         {{-- <button>Open Modal</button> --}}
