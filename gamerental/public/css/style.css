@@ -1876,6 +1876,76 @@ input[type=number] {
         font-family: poppins, sans-serif;
     }
 
+    .modal-add-admin {
+        width: 30rem;
+        padding: 1.5rem 2rem;
+        border-radius: .8rem;
+        color: var(--light);
+        background: var(--color-background);
+        box-shadow: .4rem .4rem 2.4rem .2rem var(--color-light);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .modal-add-admin input[type=text] {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 360px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
+    .modal-add-admin input[type=password] {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 360px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
+    .modal-add-admin select {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        /* box-shadow: 0 0 3px #DDD inset; */
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 360px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
+    .modal-add-game select {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 360px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    }
+
     .submit-game {
         margin-left: 138px;
     }

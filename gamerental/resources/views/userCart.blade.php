@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('layouts.head')
+    @include('layouts/head')
     <title>My Cart</title>
 
 </head>
