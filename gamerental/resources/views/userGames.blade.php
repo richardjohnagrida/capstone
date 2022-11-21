@@ -44,9 +44,9 @@
                         {{-- <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="browse.html" class="active">Games</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="/profile">Home</a></li>
+                            <li><a href="/shop" class="active">Games</a></li>
+                            <li><a href="/cart">Cart</a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li><a href="profile.html">Profile <img
@@ -186,20 +186,59 @@
                         <div class="col-lg-12">
                             <div class="heading-section">
                                 <h4><em>Most Popular</em> Games</h4>
+
+                                <form action="/shop" method="POST">
+                                    @csrf
+                                    <input type="text" placeholder="Search game tittle" id='searchText'
+                                        name="search" onkeypress="handle" />
+                                    <i class="fa fa-search"></i>
+                                </form>
+                                <a href="/shop">Show all </a>
+
+                                {{-- <form action="/shop" method="POST">
+                                    @csrf
+                                    <select name="console">
+                                        @foreach ($platforms as $platform)
+                                            <option value=""> Console</option>
+                                            <option value="{{ $platform->console_name }}">{{ $platform->console_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    <select name="genre">
+                                        <option value="">Genre</option>
+                                        <option value="RPG">RPG</option>
+                                        <option value="MMORPG">MMORPG</option>
+                                        <option value="Strategy">Strategy</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Sports">Simulation</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Adventure">Puzzle</option>
+                                    </select>
+
+                                    <button type="submit">submit</button> --}}
+
+                                <i class="fa fa-search"></i>
+                                </form>
                             </div>
                         </div>
                         <div class="row">
                             @foreach ($games as $game)
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="item">
-                                        <div class="thumb">
+                                        <div class="thumb game-card">
 
                                             <img src="{{ url('images/' . $game->cover_img) }}"alt="cover"
                                                 style="width=20%">
+                                            <input type='hidden' value="{{ json_encode($game) }}" name='game_info' />
+                                            <input name="name" value="{{ $game->name }}" hidden />
                                             <div class="hover-effect">
                                                 <div class="content">
                                                     <div class="live">
-                                                        <a href="#">Add to Cart</a>
+                                                        <button type="submit" class='add-to-cart'>Add to Cart</button>
+                                                        <button type="submit" class='remove-to-cart'
+                                                            style='display:none'>Remove to
+                                                            Cart</button>
                                                     </div>
                                                     <ul>
                                                         {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
@@ -225,8 +264,8 @@
                                     @for ($x = 1; $x <= $pages; $x++)
                                         <a href="?page={{ $x }}"
                                             class="
-                                        @if ($activePage == $x) active @endif
-                                        ">
+                @if ($activePage == $x) active @endif
+                ">
                                             {{ $x }}</a>
                                     @endfor
                                     <a href="?page={{ $pages }}">&raquo;</a>

@@ -22,6 +22,11 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- ***** Header Area Start ***** --> --}}
+    @if ($message = Session::get('success'))
+        <div class="p-4 mb-3 bg-green-400 rounded">
+            <p class="text-green-800">{{ $message }}</p>
+        </div>
+    @endif
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -45,9 +50,9 @@
 
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="games.html">games</a></li>
-                            <li><a href="cart.html" class="active">Cart</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/shop">games</a></li>
+                            <li><a href="/cart" class="active">Cart</a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
@@ -68,6 +73,7 @@
     {{-- <!-- ***** Header Area End ***** --> --}}
 
     <div class="container">
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-content">
@@ -96,54 +102,45 @@
 
                     <!-- ***** Most Popular Start ***** --> --}}
                     <div class="most-popular most-cart">
-                        <div class="row">
-                            <div class="col-lg-3 ">
-                                <input type="checkbox" class="selectall" />
-                                <label for="" class="selectall" style="color:#00a2ff;">Select All</label>
+                        <div class="row" id='cart-item-container'>
+                            <input type="checkbox" class="selectall" />
+                            <label for="" class="selectall" style="color:#00a2ff;">Select All</label>
 
-                                <div class="item cart">
-                                    <input type="checkbox" class="individual"
-                                        style="float: left;margin-bottom: 10px;" />
-                                    <img src="assets/images/popular-01.jpg" alt="" />
 
-                                    {{-- <!-- <h4>Fortnite<br /><span>Console type</span></h4> -->
-                                    <!-- <ul>
-                                            <li><i class="fa fa-star"></i> 4.8</li>
-                                            <li><i class="fa fa-download"></i> 2.3M</li>
-                                        </ul> --> --}}
+
+                            <div class='col cart-item' template='template' style='display:none;'>
+                                <div class="col-lg-3 ">
+                                    <div class="item cart">
+                                        <input type="checkbox" class="individual"
+                                            style="float: left;margin-bottom: 10px;" />
+                                        <img class='game-img' src="assets/images/popular-01.jpg" alt="" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-7 game-info">
-                                <h3>Game Name</h3>
-                                <h5>Console type</h5>
-                            </div>
-                            <div class="col-lg-3 mt-3">
 
-                                <div class="item cart">
-                                    <input type="checkbox" class="individual"
-                                        style="float: left;margin-bottom: 10px;" />
-                                    <img src="assets/images/popular-01.jpg" alt="" />
-
-                                    {{-- <!-- <h4>Fortnite<br /><span>Console type</span></h4> -->
-                                    <!-- <ul>
-                                            <li><i class="fa fa-star"></i> 4.8</li>
-                                            <li><i class="fa fa-download"></i> 2.3M</li>
-                                        </ul> --> --}}
+                                <div class="col-lg-7 game-info">
+                                    <h3 class='game-name'>Game Name</h3>
+                                    <h5 class='console-type'>Console type</h5>
+                                    <span class='price'></span>
                                 </div>
-                            </div>
-                            <div class="col-lg-7 game-info">
-                                <h3>Game Name</h3>
-                                <h5>Console type</h5>
                             </div>
                         </div>
-                        <div class="row game-rentout">
-                            <div class="col-lg-10 col-6">
-                                <button class="remove_btn">Remove</button>
-                            </div>
-                            <div class="col-lg-2 col-6">
-                                <button class="rentout_btn">Rent Out</button>
-                            </div>
 
+                        <div class="row game-rentout">
+                            <form action='/checkout' id='checkout' method='POST'>
+                                @csrf;
+
+                                <input type='hidden' name='total_amount' value='0' />
+                                <input type='number' name='number_of_weeks' placeholder="Number of weeks" />
+                                <span class='lbl-total-amount'></span>
+                                <input type='radio' name='delivery_type' value='pickup' /> Pickup
+                                <input type='radio' name='delivery_type' value='courier' /> Lalamove / Grab
+                                <div class="col-lg-10 col-6">
+                                    <button class="remove_btn">Remove</button>
+                                </div>
+                                <div class="col-lg-2 col-6">
+                                    <button class="rentout_btn" type='submit' id='rent-out'>Rent Out</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 

@@ -46,8 +46,8 @@
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
                             <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="userGames">games</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="/shop">games</a></li>
+                            <li><a href="/cart">Cart</a></li>
                             <li><a href="/">Logout</a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
