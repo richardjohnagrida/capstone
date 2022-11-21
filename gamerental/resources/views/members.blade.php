@@ -45,12 +45,12 @@
                     </span>
                     <h3>Orders</h3>
                 </a>
-                <a href="">
-                    <span class="material-icons-sharp">
+                <a href="#modal-add-admin" class="link-1" id="modal-closed"><span class="material-icons-sharp">
                         edit_note
                     </span>
                     <h3>Create Admin</h3>
                 </a>
+
                 <a href="/">
                     <span class="material-icons-sharp">
                         logout
@@ -59,6 +59,34 @@
                 </a>
             </div>
         </aside>
+
+        <div class="modal-container" id="modal-add-admin">
+            <div class="modal-add-admin">
+                <form action="add_games" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @include('layouts/logo')
+                    <br>
+                    <h2>Add Admin</h2>
+                    <br>
+                    <label>Name</label>
+                    <input type="text" name="name">
+                    <label>Password</label>
+                    <input type="password" name="">
+                    <label>Status</label>
+                    {{-- <input type="text" name="genre"><br> --}}
+                    <div class="select-admin-active">
+                        <select name="genre">
+                            <option value="">Active</option>
+                            <option value="">Deactive</option>
+                        </select>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="modal__btn submit-game">Create &rarr;</button>
+                </form>
+                <a href="#modal-closed" class="link-2"></a>
+            </div>
+        </div>
 
 
 
