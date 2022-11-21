@@ -13,9 +13,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-                <div class="page-content">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-11">
+                <div class="page-content signup-form">
                     <!-- ***** Banner Start ***** -->
                     <!-- <div class="main-banner">
                         <div class="row">
@@ -31,42 +31,50 @@
                         </div>
                     </div> -->
                     <!-- ***** Banner End ***** -->
+                    @include('layouts/logo')
 
                     <!-- ***** Most Popular Start ***** -->
-                    <div class="live-stream text-left" id="most-popular-game">
-                        <div class="col-lg-12">
+                    <div class="live-stream  signup" id="most-popular-game">
+                        <div class="col-lg-12 ">
                             <div class="heading-section">
                                 <!-- <h4><em>Most Popular</em> Games</h4> -->
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12 col-sm-6 signup">
+                            <div class="col-lg-12 ">
                                 <form action="/signup_member" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <label>First name</label>
-                                    <input type="text" name="fname"><br>
-                                    <label>Last name</label>
-                                    <input type="text" name="lname"><br>
-                                    <label>Date of Birth</label>
-                                    <input type="date" name="dob"><br>
-                                    <label>Email</label>
-                                    <input type="email" name="email"><br>
-                                    <label>Password</label>
-                                    <input type="password" name="password"><br>
-                                    <label>Confirm Password</label>
-                                    <input type="password" name="confirmPass"><br>
-                                    <label>Contact Number</label>
-                                    <input type="text" name="contact"><br>
-                                    <label>Address</label>
-                                    <input type="text" name="address"><br>
-                                    <label>Upload profile photo:</label>
-                                    <input type="file" name="profile" accept="{{ $allowed_img_format }}">
-                                    <label>Upload governement ID:</label>
-                                    <input type="file" name="id">
-                                    <label>Upload Proof of Billing:</label>
-                                    <input type="file" name="proof">
-                                    <button type="submit">Submit</button>
-
+                                    <h2>Signup</h2>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <label>First name</label>
+                                            <input type="text" name="fname">
+                                            <label>Last name</label>
+                                            <input type="text" name="lname">
+                                            <label>Password</label>
+                                            <input type="password" name="password">
+                                            <label>Confirm Password</label>
+                                            <input type="password" name="confirmPass">
+                                            <label>Contact Number</label>
+                                            <input type="text" name="contact">
+                                            <label>Date of Birth</label>
+                                            <input type="date" name="dob">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <label>Email</label>
+                                            <input type="text" name="email">
+                                            <label>Address</label>
+                                            <input type="text" name="address">
+                                            <label>Upload governement ID:</label>
+                                            <input type="file" name="id">
+                                            <label>Upload Proof of Billing:</label>
+                                            <input type="file" name="proof">
+                                            <label>Upload profile photo:</label>
+                                            <input type="file" name="profile" accept="{{ $allowed_img_format }}">
+                                            <button class="sign_btn" type="submit">Submit</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
 
@@ -189,14 +197,14 @@
 
     {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
+    {{-- <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
+    {{-- <script src="/js/userJS.js"></script> --}}
+    <script src="/js/isotope.min.js"></script>
+    <script src="/js/owl-carousel.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 
 </html>
