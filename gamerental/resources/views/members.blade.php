@@ -49,7 +49,7 @@
                     <span class="material-icons-sharp">
                         edit_note
                     </span>
-                    <h3>Create Order</h3>
+                    <h3>Create Admin</h3>
                 </a>
                 <a href="/">
                     <span class="material-icons-sharp">

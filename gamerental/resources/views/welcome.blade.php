@@ -28,7 +28,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
-                        <a href="index.html" class="logo">
+                        <a href="/" class="logo">
                             @include('layouts/logo')
                         </a>
                         {{-- <!-- ***** Logo End ***** -->
