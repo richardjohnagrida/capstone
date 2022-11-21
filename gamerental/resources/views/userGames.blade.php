@@ -189,33 +189,49 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="item">
-                                    <div class="thumb">
-                                        <img src="assets/images/stream-01.jpg" alt="">
-                                        <div class="hover-effect">
-                                            <div class="content">
-                                                <div class="live">
-                                                    <a href="#">Add to Cart</a>
-                                                </div>
-                                                <ul>
-                                                    {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
+                            @foreach ($games as $game)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="item">
+                                        <div class="thumb">
+
+                                            <img src="{{ url('images/' . $game->cover_img) }}"alt="cover"
+                                                style="width=20%">
+                                            <div class="hover-effect">
+                                                <div class="content">
+                                                    <div class="live">
+                                                        <a href="#">Add to Cart</a>
+                                                    </div>
+                                                    <ul>
+                                                        {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
                                                     <!-- <li><a href="#"><i class="fa fa-gamepad"></i> CS-GO</a></li> --> --}}
-                                                </ul>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="down-content">
-                                        {{-- <!-- <div class="avatar">
+                                        <div class="down-content">
+                                            {{-- <!-- <div class="avatar">
                       <img src="assets/images/avatar-01.jpg" alt=""
                         style="max-width: 46px; border-radius: 50%; float: left;">
                     </div> -->
                                         <!-- <span><i class="fa fa-check"></i> KenganC</span> --> --}}
-                                        <h5>Game name</h5>
+                                            <h5>{{ $game->name }}</h5>
+                                        </div>
                                     </div>
                                 </div>
+                            @endforeach
+                            <div class="page-container-member">
+                                <div class="pagination">
+                                    <a href="?page=1">&laquo;</a>
+                                    @for ($x = 1; $x <= $pages; $x++)
+                                        <a href="?page={{ $x }}"
+                                            class="
+                                        @if ($activePage == $x) active @endif
+                                        ">
+                                            {{ $x }}</a>
+                                    @endfor
+                                    <a href="?page={{ $pages }}">&raquo;</a>
+                                </div>
                             </div>
-
                             {{-- <!-- <div class="col-lg-12">
                 <div class="main-button">
                   <a href="streams.html">Discover All Streams</a>
