@@ -70,18 +70,24 @@
                     <br>
                     <h2>Add Admin</h2>
                     <br>
-                    <label>Name</label>
-                    <input type="text" name="name">
+                    <label>First Name</label>
+                    <input type="email" name="">
+                    <label>Last Name</label>
+                    <input type="text" name="">
+                    <br>
                     <label>Password</label>
-                    <input type="password" name="">
-                    <label>Status</label>
-                    {{-- <input type="text" name="genre"><br> --}}
+                    <input type="text" name="">
+                    <br>
+                    <label>Email</label>
+                    <input type="text" name="">
+                 
+                    {{-- <label>Status</label>
                     <div class="select-admin-active">
                         <select name="genre">
                             <option value="">Active</option>
                             <option value="">Deactive</option>
                         </select>
-                    </div>
+                    </div> --}}
 
                     <br>
                     <button type="submit" class="modal__btn submit-game">Create &rarr;</button>

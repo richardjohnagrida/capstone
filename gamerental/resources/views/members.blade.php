@@ -64,22 +64,28 @@
             <div class="modal-add-admin">
                 <form action="add_games" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('layouts/logo')
+                    {{-- @include('layouts/logo') --}}
                     <br>
                     <h2>Add Admin</h2>
                     <br>
-                    <label>Name</label>
-                    <input type="text" name="name">
+                    <label>First Name</label>
+                    <input type="email" name="">
+                    <label>Last Name</label>
+                    <input type="text" name="">
+                    <br>
                     <label>Password</label>
-                    <input type="password" name="">
-                    <label>Status</label>
-                    {{-- <input type="text" name="genre"><br> --}}
-                    <div class="select-admin-active">
-                        <select name="genre">
-                            <option value="">Active</option>
-                            <option value="">Deactive</option>
-                        </select>
-                    </div>
+                    <input type="text" name="">
+                    <br>
+                    <label>Email</label>
+                    <input type="text" name="">
+
+                    {{-- <label>Status</label>
+                <div class="select-admin-active">
+                    <select name="genre">
+                        <option value="">Active</option>
+                        <option value="">Deactive</option>
+                    </select>
+                </div> --}}
 
                     <br>
                     <button type="submit" class="modal__btn submit-game">Create &rarr;</button>
@@ -139,6 +145,8 @@
                             <form action="/members/{{ $member->member_id }}" method="POST">
                                 @csrf
                                 @method('PUT')
+                                {{-- @include('layouts/logo') --}}
+
                                 <h1 class="member-info" style="margin:10px 0px 20px 0px;">Member Info</h1>
                                 <label for="" placeholder="CustomerName">Customer Name</label>
                                 <input type="text" value="{{ $member->first_name }} {{ $member->last_name }}"

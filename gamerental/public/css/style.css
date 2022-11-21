@@ -1074,6 +1074,22 @@ main .recent-renter a {
     font-family: poppins, sans-serif;
 }
 
+.modal-add-admin input[type=email] {
+    background: var(--color-light);
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    /* box-shadow: 0 0 3px #DDD inset; */
+    color: var(--color-dark);
+    padding: 5px 10px;
+    width: 360px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+    margin-bottom: 10px;
+}
+
 .modal-add-game select {
     background: var(--color-light);
     border: 1px solid #DDD;
@@ -1877,7 +1893,7 @@ input[type=number] {
     }
 
     .modal-add-admin {
-        width: 30rem;
+        width: 23rem;
         padding: 1.5rem 2rem;
         border-radius: .8rem;
         color: var(--light);
@@ -1894,42 +1910,61 @@ input[type=number] {
         /* box-shadow: 0 0 3px #DDD inset; */
         color: var(--color-dark);
         padding: 5px 10px;
-        width: 360px;
+        width: 265px;
         height: 40px;
         outline: none;
         border-radius: 100px;
         font-size: 14px;
         font-family: poppins, sans-serif;
+        margin-bottom: 10px;
     }
 
     .modal-add-admin input[type=password] {
-        background: var(--color-light);
+        background: transparent;
         border: 1px solid #DDD;
         border-radius: 1px;
-        /* box-shadow: 0 0 3px #DDD inset; */
         color: var(--color-dark);
         padding: 5px 10px;
-        width: 360px;
+        width: 265px;
         height: 40px;
         outline: none;
         border-radius: 100px;
         font-size: 14px;
         font-family: poppins, sans-serif;
+        margin-bottom: 10px;
     }
 
-    .modal-add-admin select {
-        background: var(--color-light);
+    .modal-add-admin input[type=email] {
+        background: var(--color-background);
         border: 1px solid #DDD;
         border-radius: 1px;
-        /* box-shadow: 0 0 3px #DDD inset; */
         color: var(--color-dark);
         padding: 5px 10px;
-        width: 360px;
+        width: 265px;
         height: 40px;
         outline: none;
         border-radius: 100px;
         font-size: 14px;
         font-family: poppins, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    /* .modal-add-admin select {
+        background: var(--color-light);
+        border: 1px solid #DDD;
+        border-radius: 1px;
+        color: var(--color-dark);
+        padding: 5px 10px;
+        width: 265px;
+        height: 40px;
+        outline: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-family: poppins, sans-serif;
+    } */
+
+    .modal-add-admin .submit-game {
+        height: 40px;
     }
 
     .modal-add-game select {
