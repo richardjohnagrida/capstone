@@ -8,7 +8,7 @@ class UserIndexController extends Controller
 {
     public function showUserIndex()
     {
-        return view('/profile');
+        return view('userGames');
     }
 
    
