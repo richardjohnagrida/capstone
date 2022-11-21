@@ -13,6 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserIndexController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserGamesController;
+use App\Http\Controllers\CartController;
 
 /*
 /*
@@ -45,6 +46,7 @@ Route::get('/profile', [UserIndexController::class, 'showUserIndex']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/profile', [LoginController::class, 'showProfile']);
 Route::get('/shop', [UserGamesController::class, 'showUserGames']);
+Route::get('/cart', [CartController::class, 'showCart']);
 
 
 
