@@ -139,7 +139,7 @@
             </div>
 
 
-            <div class="page-container">
+            <div class="page-container-member">
                 <div class="pagination">
                     <a href="?page=1">&laquo;</a>
                     @for ($x = 1; $x <= $pages; $x++)

@@ -23,7 +23,7 @@ themToggler.addEventListener('click', () => {
 // end darkmode
 
 let valueDisplays = document.querySelectorAll(".num")
-let interval = 4000;
+let interval = 1000;
 
 valueDisplays.forEach((valueDisplays) => {
     let startValue = 0;

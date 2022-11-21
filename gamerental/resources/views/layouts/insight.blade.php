@@ -9,12 +9,12 @@
                 <h3>Current Profit</h3>
                 <!-- TODO data-val should be connected to the database -->
 
-                @foreach ($profits as $profit)
+                {{-- @foreach ($profits as $profit)
                     <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b></h1>
-                @endforeach
+                @endforeach --}}
 
                 @foreach ($months as $month)
-                    <p> &#8369<b class="num" data-val={{ $month->months }}></b> </>
+                   <h1> &#8369<b class="num" data-val={{ $month->months }}></b> </h1>
                 @endforeach
             </div>
             <div class="progress">
@@ -35,12 +35,12 @@
         </span>
         <div class="middle">
             <div class="left">
-                <h3>Number of Rentals</h3>
-                @foreach ($rents as $rent)
+                {{-- <h3>Number of Rentals</h3> --}}
+                {{-- @foreach ($rents as $rent)
                     <h1><small>Daily Rentals</small> <b class="num" data-val={{ $rent->rents }}> </b> </>
-                @endforeach
+                @endforeach --}}
                 @foreach ($monthlyRents as $monthlyRent)
-                    <h1><small>Monthly Rentals</small> {{ $monthlyRent->mrents }} </>
+                    <h1><small>Monthly Rentals</small> <b class="num" data-val={{ $monthlyRent->mrents }}>0</b></h1>
                 @endforeach
             </div>
             <div class="progress">

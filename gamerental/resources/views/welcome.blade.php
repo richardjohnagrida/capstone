@@ -78,10 +78,10 @@
 
                                     <label for="">Email</label>
                                     <input type="text" name="email" id=""><br>
-                                    <label for="">password</label>
+                                    <label for="">Password</label>
                                     <input type="password" name="password"><br>
                                     <button type="submit" class="login_btn">Login</button>
-                                    <a href="/signup" class="signup_btn">signup</a>
+                                    <a href="/signup" class="signup_btn">Signup</a>
                                 </form>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="header-text">
-                                    <h6>Welcome To GAME</h6>
+                                    <h6>Welcome to The Console</h6>
                                     <h4><em>Browse</em> Our Popular Games Here</h4>
                                     <div class="main-button">
                                         <a href="notGame.html">Browse Now</a>

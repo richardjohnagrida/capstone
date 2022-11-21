@@ -70,7 +70,7 @@
                 <div class="page-content">
 
                     {{-- <!-- ***** Featured Games Start ***** --> --}}
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-8">
                             <div class="featured-games header-text">
                                 <div class="heading-section">
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <!-- ***** Featured Games End ***** --> --}}
 
                     {{-- <!-- ***** Rent Step Start ***** --> --}}
@@ -171,11 +171,11 @@
                                             vel explicabo, est qui?</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
+                                {{-- <div class="col-lg-12">
                                     <div class="main-button">
                                         <a href="profile.html">Go To Profile</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

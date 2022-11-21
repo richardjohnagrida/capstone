@@ -193,8 +193,9 @@
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-        
-                        <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile" class="profile-photo">
+
+                        <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
+                            class="profile-photo">
                     </div>
                 </div>
             </div>

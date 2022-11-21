@@ -185,7 +185,8 @@ aside .sidebar {
     position: relative;
     top: 3rem;
 }
-
+aside .sidebar:last-child {
+}
 aside h3 {
     font-weight: 500;
 }
@@ -210,7 +211,7 @@ aside .sidebar a span {
 
 aside .sidebar a:last-child {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     width: 100%;
 }
 
@@ -280,7 +281,7 @@ main .date {
 main .insights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
+    gap: 1.5rem;
 }
 
 main .insights>div {
@@ -902,13 +903,15 @@ main .recent-renter a {
     background-color: var(--color-primary);
     color: white;
     box-shadow: var(--box-shadow);
-
+    border-color: var(--color-primary);
 }
 
 .archive-btn {
     margin-left: 140px;
     margin-right: 10px;
     border-color: var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
 }
 
 .submit-game {
@@ -943,9 +946,11 @@ main .recent-renter a {
     font-size: 14px;
     font-family: poppins, sans-serif;
 }
-.recent-renter table{
+
+.recent-renter table {
     margin-top: 30px;
 }
+
 .filter select {
     background: var(--color-light);
     border: 1px solid #DDD;
@@ -960,13 +965,12 @@ main .recent-renter a {
     font-family: poppins, sans-serif;
 }
 
-.filters .select-console::after {
+/* .filters .select-console::after {
     content: '\25BC';
     position: absolute;
     top: 21%;
     right: 4%;
     padding: 1em;
-    /* background-color: #34495e; */
     transition: .25s all ease;
     pointer-events: none;
 }
@@ -977,10 +981,9 @@ main .recent-renter a {
     top: 29%;
     right: 4%;
     padding: 1em;
-    /* background-color: #34495e; */
     transition: .25s all ease;
     pointer-events: none;
-}
+} */
 
 .select-genre button {
     margin-top: 10px;
@@ -1404,18 +1407,13 @@ input[type=number] {
 
 
 /*PAGINATION*/
-.page-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 85%;
-    left: 38%;
-}
+
 
 .pagination {
     display: inline-block;
+    margin-top: 10px;
 }
+
 
 .pagination a {
     float: left;
@@ -1428,7 +1426,7 @@ input[type=number] {
 }
 
 
-.page-container a.active {
+.pagination a.active {
     background-color: var(--color-primary);
     color: #fff;
 }
@@ -1437,7 +1435,7 @@ input[type=number] {
     transition: background-color .3s;
 }
 
-.page-container a:hover:not(.active) {
+.paignation a:hover:not(.active) {
     background-color: var(--color-dark);
     color: var(--color-background);
 }
@@ -1491,6 +1489,9 @@ input[type=number] {
         font-family: poppins, sans-serif;
     }
 
+
+
+
     .modal-add-game input[type=number] {
         background: var(--color-light);
         border: 1px solid #DDD;
@@ -1543,14 +1544,7 @@ input[type=number] {
         padding-top: 500px;
     }
 
-    .page-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 55%;
-        left: 22%;
-    }
+
 
     .filter select {
         background: var(--color-light);
@@ -1566,13 +1560,12 @@ input[type=number] {
         font-family: poppins, sans-serif;
     }
 
-    .filters .select-console::after {
+    /* .filters .select-console::after {
         content: '\25BC';
         position: absolute;
         top: 13.5%;
         right: 6%;
         padding: 1em;
-        /* background-color: #34495e; */
         transition: .25s all ease;
         pointer-events: none;
     }
@@ -1583,12 +1576,12 @@ input[type=number] {
         top: 18.8%;
         right: 6%;
         padding: 1em;
-        /* background-color: #34495e; */
         transition: .25s all ease;
         pointer-events: none;
-    }
+    } */
 
 }
+
 
 @media screen and (max-width: 768px) {
 
@@ -1851,16 +1844,31 @@ input[type=number] {
         color: var(--color-dark);
     }
 
-    .page-container {
+
+
+    .-member {
         display: flex;
         align-items: center;
         justify-content: center;
         position: absolute;
-        top: 110%;
-        left: 13%;
+        top: 105%;
+        left: 28%;
     }
 
-    .page-container .pagination {
+    .-member .pagination {
+        margin-top: 20px;
+    }
+
+    .-add-game {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 113%;
+        left: 23%;
+    }
+
+    .-add-game .pagination {
         margin-top: 20px;
     }
 
