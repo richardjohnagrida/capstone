@@ -53,6 +53,9 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/shop">games</a></li>
                             <li><a href="/cart" class="active">Cart</a></li>
+                            <li><a href="/"><span class="material-icons-sharp">
+                                        logout
+                                    </span></a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
@@ -103,39 +106,40 @@
                     <!-- ***** Most Popular Start ***** --> --}}
                     <div class="most-popular most-cart">
                         <div class="row" id='cart-item-container'>
-                            <input type="checkbox" class="selectall" />
-                            <label for="" class="selectall" style="color:#00a2ff;">Select All</label>
+                            <label for="sel" class="selectall" style="color:#00a2ff;">Select All</label>
+                            <input type="checkbox" class="selectall" id="sel" style="display: none" />
 
                             <div class='col cart-item' template='template' style='display:none;'>
+
                                 <div class="col-lg-12 ">
                                     <div class="item cart">
                                         <input type="checkbox" class="individual"
                                             style="float: left;margin-bottom: 10px;" />
-                                        <img class='game-img' src="assets/images/popular-01.jpg" alt="" />
+                                        <img class='game-img' style="height:350px" alt="" />
+                                        <h3 class='game-name'>Game Name</h3>
+                                        {{-- <h5 class='console-type'>Console type</h5> --}}
                                     </div>
                                 </div>
 
                                 <div class="col-lg-5 game-info">
-                                    <h3 class='game-name'>Game Name</h3>
-                                    <h5 class='console-type'>Console type</h5>
                                     <span class='price'></span>
+
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            
-                        </div>
+
                         <div class="row game-rentout">
                             <form action='/checkout' id='checkout' method='POST'>
                                 @csrf;
 
                                 <input type='hidden' name='total_amount' value='0' />
-                                <input type='number' name='number_of_weeks' placeholder="Number of weeks" />
-                                <span class='lbl-total-amount'></span>
-
-                                <input type='radio' name='delivery_type' value='pickup' /> Pickup
-                                <input type='radio' name='delivery_type' value='courier' /> Lalamove / Grab
+                                <input type='number' name='number_of_weeks' placeholder="Number of weeks" /><br>
+                                <span style="color:#fff">Total Price ₱ <label class='lbl-total-amount'></label></span><br>
+                                <label for="pick-up">Pickup</label>
+                                <input type='radio' name='delivery_type' id="pick-up" value='pickup' />
+                                <label for="lalamove">Lalamove / Grab</label>
+                                <input type='radio' name='delivery_type' id="lalamove" value='courier' />
                                 <div class="col-lg-10 col-6">
                                     <button class="remove_btn">Remove</button>
                                 </div>

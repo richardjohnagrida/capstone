@@ -27,9 +27,8 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
-                        <a href="index.html" class="logo">
-                            {{-- <!-- <img src="assets/images/logo.png" alt=""> --> --}}
-                            <h1>GAME</h1>
+                        <a href="" class="logo">
+                            @include('layouts/logo')
                         </a>
                         {{-- <!-- ***** Logo End ***** -->
 
@@ -48,7 +47,9 @@
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="/shop">games</a></li>
                             <li><a href="/cart">Cart</a></li>
-                            <li><a href="/">Logout</a></li>
+                            <li><a href="/"><span class="material-icons-sharp">
+                                logout
+                                    </span></a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>

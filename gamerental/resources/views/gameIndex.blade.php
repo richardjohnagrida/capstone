@@ -4,7 +4,7 @@
 <head>
     @include('layouts/userHead')
 
-    <title>WELCOME</title>
+    <title>Games</title>
 </head>
 
 <body style="background-image: url('images/background.png'); background-repeat: no-repeat;background-size: cover">
@@ -46,8 +46,8 @@
 
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="/" class="active">Home</a></li>
-                            <li><a href="/gamelist">games</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/gamelist" class="active">games</a></li>
 
                             {{-- <!-- <li><a href="cart.html">Cart</a></li> -->
                             <!-- <li><a href="details.html">Details</a></li> -->
@@ -117,7 +117,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="item">
                                     <img src="{{ url('images/' . $game->cover_img) }}" alt="profile"
-                                        class="profile-photo" style="width:100%">
+                                        class="profile-photo"  style="height:350px" style="width:100%">
                                     <h4>{{ $game->name }}<br /><span>{{ $game->genre }}</span></h4>
                                     <ul>
                                     </ul>
@@ -143,7 +143,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="item">
                                     <img src="{{ url('images/' . $box->cover_img) }}" alt="profile"
-                                        class="profile-photo" style="width:100%">
+                                        class="profile-photo"  style="height:350px" style="width:100%">
                                     <h4>{{ $box->name }}<br /><span>{{ $box->genre }}</span></h4>
                                     <ul>
                                     </ul>
@@ -195,11 +195,11 @@
     {{-- <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="/js/userJS.js"></script>
-    <script src="/js/isotope.min.js"></script>
+    {{-- <script src="/js/isotope.min.js"></script>
     <script src="/js/owl-carousel.js"></script>
     <script src="/js/tabs.js"></script>
     <script src="/js/popup.js"></script>
-    <script src="/js/custom.js"></script>
+    <script src="/js/custom.js"></script> --}}
 </body>
 
 </html>
