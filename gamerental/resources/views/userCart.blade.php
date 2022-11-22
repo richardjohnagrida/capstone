@@ -133,6 +133,7 @@
                                 <input type='hidden' name='total_amount' value='0' />
                                 <input type='number' name='number_of_weeks' placeholder="Number of weeks" />
                                 <span class='lbl-total-amount'></span>
+
                                 <input type='radio' name='delivery_type' value='pickup' /> Pickup
                                 <input type='radio' name='delivery_type' value='courier' /> Lalamove / Grab
                                 <div class="col-lg-10 col-6">

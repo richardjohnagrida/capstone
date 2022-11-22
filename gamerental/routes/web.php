@@ -14,6 +14,7 @@ use App\Http\Controllers\UserIndexController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserGamesController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\gamesIndexController;
 
 /*
 /*
@@ -47,13 +48,14 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/profile', [LoginController::class, 'showProfile']);
 Route::get('/shop', [UserGamesController::class, 'showUserGames']);
 Route::get('/cart', [CartController::class, 'showCart']);
-Route::post("/checkout", [CartController::class, 'checkout']);
+Route::get('/gamelist', [gamesIndexController::class, 'showIndexGames']);
+
 
 Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");
 Route::put('/members/{id}', [MemberController::class, 'update']);
 Route::put('/orders/{id}', [OrdersController::class, 'update']);
 
-
+Route::post("/checkout", [CartController::class, 'checkout']);
 Route::post('/profile', [LoginController::class, 'UserLogin']);
 Route::post('/signup_member', [SignupMemberController::class, 'store']);
 Route::post('/add_games', [GamesController::class, 'store']);
