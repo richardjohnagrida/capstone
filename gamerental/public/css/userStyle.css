@@ -15185,7 +15185,7 @@ input::-webkit-file-upload-button {
 
 }
 
-.game-rentout label{
+.game-rentout label {
     color: #fff;
 }
 
@@ -15323,8 +15323,27 @@ input::-webkit-file-upload-button {
     margin: auto;
     padding: 20px;
     border: 1px solid #27292a;
-    width: 26%;
+    width: 23%;
     color: #fff;
+}
+
+.modal-content .form { 
+    display: table;
+}
+
+.modal-content p {
+    display: table-cell;
+    gap: 1rem;
+}
+
+.modal-content label {
+    display: table-row;
+    margin-top: 10px;
+}
+
+.modal-content input {
+    display: table-cell;
+    margin-bottom: 5px;
 }
 
 .modal-content h1 {
