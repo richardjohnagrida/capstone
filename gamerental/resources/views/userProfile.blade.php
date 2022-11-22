@@ -45,14 +45,15 @@
                         <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="games.html">Browse</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            {{-- <!-- <li><a href="details.html">Details</a></li> -->
-                            <!-- <li><a href="streams.html">Streams</a></li> --> --}}
-                            <li><a href="profile.html" class="active">Profile <img
-                                        src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                        alt="" /></a>
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="/shop">games</a></li>
+                            <li><a href="/cart">Cart</a></li>
+                            <li><a href="/logout">Logout</a></li>
+
+                            <li>
+                                <a href="profile.html">Profile
+                                    <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
+                                        class="profile-photo"></a>
                             </li>
                         </ul>
                         <a class='menu-trigger'>
@@ -77,16 +78,14 @@
                             <div class="main-profile">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.6435-1/45748365_309911219843090_315947870287036416_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMySJgpcj6eF2Yhimv4FAMMdhVni963Q8x2FWeL3rdDwhEX964XhGYl82YnsyMBLY0biDXI5RIeTmOZ2qXClL3&_nc_ohc=WIcp9GzzQ-UAX8U9s--&_nc_ht=scontent.fcrk3-2.fna&oh=00_AfANb-hpDD7OFXt0toYvCTIc1Z5tvI-HMePNdeo9JxdJAw&oe=639FECDF"
-                                            alt="" style="border-radius: 23px;" />
+                                        <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
+                                            class="profile-photo">
                                     </div>
 
                                     <div class="col-lg-4 align-self-center">
                                         <div class="main-info header-text">
                                             <div>
-                                                <label for="upload" class="changeprofile">Change Profile
-                                                    Picture</label>
-                                                <input type="file" id="upload" style="display: none">
+
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
                                                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -94,19 +93,21 @@
                                                         d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
                                                 </svg><i class="bi bi-image"></i>
                                             </div>
-                                            <h4>Ate jo</h4>
+                                            <h4>{{ Session::get('first_name') }} </h4>
                                             <p>You Haven't Gone Live yet. Go Live By Touching The Button Below.</p>
                                             <div class="main-border-button">
-                                                <a href="games.html">View More Games</a>
+                                                <a href="/shop">View More Games</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 align-self-center">
                                         <ul>
                                             <li>Status <span>Active</span></li>
-                                            <li>Total Games Rented <span>3</span></li>
+                                            @foreach ($rent as $totalRent)
+                                                <li>Total Games Rented <span>{{ $totalRent->totalRent }}</span></li>
+                                            @endforeach
                                             <li>Recent Game <span>Barbie</span></li>
-                                            <li>None<span>None</span></li>
+                                            <li>Deliquent Rent<span>None</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -179,7 +180,7 @@
 
 
 
-     {{-- <!-- Scripts -->
+    {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
     {{-- <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}

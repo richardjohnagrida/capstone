@@ -15,6 +15,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserGamesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\gamesIndexController;
+use App\Http\Controllers\userProfileController;
 
 /*
 /*
@@ -41,25 +42,30 @@ Route::post('/search', [FilterController::class, 'result']);
 Route::get('/members', [MemberController::class, 'show']);
 Route::get('/approval/{id}', [ApprovalController::class, 'show']);
 Route::get('/orders', [OrdersController::class, 'show']);
-Route::get('/', [UserIndexController::class, 'showUserIndex']);
 Route::get('/', [WelcomeController::class, 'showGames']);
-Route::get('/profile', [UserIndexController::class, 'showUserIndex']);
-Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/profile', [LoginController::class, 'showProfile']);
 Route::get('/shop', [UserGamesController::class, 'showUserGames']);
 Route::get('/cart', [CartController::class, 'showCart']);
 Route::get('/gamelist', [gamesIndexController::class, 'showIndexGames']);
+Route::get('/profile', [userIndexController::class, 'showList']);
+Route::get('/library', [userProfileController::class, 'showInfo']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+
+
 
 
 Route::put('/games/{id}', [GamesController::class, 'update'])->name("games.update");
 Route::put('/members/{id}', [MemberController::class, 'update']);
 Route::put('/orders/{id}', [OrdersController::class, 'update']);
 
+
 Route::post("/checkout", [CartController::class, 'checkout']);
 Route::post('/profile', [LoginController::class, 'UserLogin']);
 Route::post('/signup_member', [SignupMemberController::class, 'store']);
 Route::post('/add_games', [GamesController::class, 'store']);
 Route::post('/shop', [UserGamesController::class, 'search']);
+
 
 
 

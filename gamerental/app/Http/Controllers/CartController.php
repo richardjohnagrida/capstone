@@ -42,10 +42,16 @@ class CartController extends Controller
         $orders->save();
 
         $itemIds = $request->get("itemIds");
+
+        $lastOrder = DB::select("SELECT LAST_INSERT_ID(order_id) as lastOrder FROM orders_games ORDER BY order_id DESC LIMIT 1");
+
+        $order = $lastOrder[0]->lastOrder;
+
         foreach ($itemIds as $gameId) {
 
             $item = new OrderItem;
-            $item->order_id = $id;
+            $item->order_id = $order;
+            $item->member_id = $id;
             $item->game_id = $gameId;
             $item->save();
             

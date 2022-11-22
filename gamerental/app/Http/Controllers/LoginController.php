@@ -36,6 +36,7 @@ class LoginController extends Controller
     }
 
     public function showProfile(){
+
         if (Session::get("user_type") == "member"){
             return view('/UserIndex');
         }
@@ -47,7 +48,18 @@ class LoginController extends Controller
         else{
             return "Not logged in!";
         }
-
    
+    }
+
+    
+    public function logout(){
+        if (Session::has('member_id')){
+            Session::pull('member_id');
+            Session::pull('email');
+            Session::pull('user_type');
+            Session::pull('first_name');
+            Session::pull('last_name');
+            return redirect('/');
+        }
     }
 }

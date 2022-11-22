@@ -73,7 +73,7 @@
 
                                 <h1>Login</h1>
 
-                                <form action="profile" method="POST">
+                                <form action="/profile" method="POST">
                                     @csrf
 
                                     <label for="">Email</label>
