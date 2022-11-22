@@ -6,7 +6,7 @@
     <title>WELCOME</title>
 </head>
 
-<body style="background-image: url('images/background.png'); background-repeat: no-repeat;background-size: cover">
+<body style="background-image: url('images/background.png'); background-repeat: no-repeat;background-size: cover; border-radius:20px;">
 
     {{-- <!-- ***** Preloader Start ***** -->
     <!-- <div id="js-preloader" class="js-preloader">

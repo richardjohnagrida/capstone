@@ -13,6 +13,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+<link rel="shortcut icon" href="images/icons/icon.ico" type="image/x-icon">
 <script src="{{ asset('js/cart.js') }}"></script>
 <!-- Additional CSS Files -->
 <link rel="stylesheet" href="/css/userStyle.css">
