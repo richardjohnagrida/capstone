@@ -44,7 +44,7 @@
 
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="/profile" class="active">Home</a></li>
                             <li><a href="/shop">games</a></li>
                             <li><a href="/cart">Cart</a></li>
                             <li><a href="/logout"><span class="material-icons-sharp">
@@ -53,7 +53,7 @@
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li>
-                                <a href="/">Profile
+                                <a href="/library">Profile
                                     <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
                                         class="profile-photo"></a>
                             </li>

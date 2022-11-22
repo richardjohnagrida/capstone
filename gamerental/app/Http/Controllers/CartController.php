@@ -54,6 +54,8 @@ class CartController extends Controller
             $item->member_id = $id;
             $item->game_id = $gameId;
             $item->save();
+
+            return redirect('/profile');
             
         }
     }
