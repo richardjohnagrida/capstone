@@ -13,7 +13,7 @@ class DashboardController extends Controller
 {
     public function show()
     {
-        $rentals = DB::select("SELECT orders_games.order_id,first_name, last_name, name, orders_games.created_at, no_weeks,no_months, due_dates FROM `orders_games` INNER JOIN members ON orders_games.member_id = members.member_id INNER JOIN order_item ON orders_games.order_id = order_item.order_id INNER JOIN games ON order_item.game_id = games.game_id");
+        $rentals = DB::select("SELECT orders_games.order_id,first_name, last_name, name, orders_games.created_at, no_weeks,no_months, due_dates FROM `orders_games` INNER JOIN members ON orders_games.member_id = members.member_id INNER JOIN order_item ON orders_games.order_id = order_item.order_id INNER JOIN games ON order_item.game_id = games.game_id ORDER BY order_id DESC LIMIT 8" );
 
         $profits = DB::select("SELECT SUM(total_amount) as total_amount FROM orders_games WHERE DATE(created_at) = CURRENT_DATE");
 

@@ -133,13 +133,8 @@
                                             {{-- <img src="assets/images/service-01.jpg" alt=""
                                                 style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
-                                        <h4>Go To Your Profile</h4>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus veniam
-                                            fuga,
-                                            repellat
-                                            aspernatur suscipit fugit, quo earum magni rem, molestias quasi at rerum.
-                                            Nesciunt obcaecati quas
-                                            vel explicabo, est qui?</p>
+                                        <h4>Select Games</h4>
+                                        <p>From your homepage, select SHOP and choose from wide variety of games</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -148,14 +143,8 @@
                                             {{-- <img src="assets/images/service-02.jpg" alt=""
                                                 style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
-                                        <h4>Live Stream Button</h4>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
-                                            veniam fuga,
-                                            repellat
-                                            aspernatur suscipit fugit, quo earum magni rem, molestias quasi at rerum.
-                                            Nesciunt obcaecati
-                                            quas
-                                            vel explicabo, est qui?</p>
+                                        <h4>Add to Cart</h4>
+                                        <p>Upon selecting, go to CART to review the games before pressing rent out</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -164,14 +153,9 @@
                                             {{-- <img src="assets/images/service-03.jpg" alt=""
                                                 style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
-                                        <h4>You Are Live</h4>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus veniam
-                                            fuga,
-                                            repellat
-                                            aspernatur suscipit fugit, quo earum magni rem, molestias quasi at rerum.
-                                            Nesciunt obcaecati
-                                            quas
-                                            vel explicabo, est qui?</p>
+                                        <h4>Wait for Aprroval</h4>
+                                        <p> Kindly wait for our call from one of our staff to confirm your order and
+                                            delivery</p>
                                     </div>
                                 </div>
                                 {{-- <div class="col-lg-12">
