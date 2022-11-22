@@ -15160,12 +15160,50 @@ input::-webkit-file-upload-button {
     max-width: 250px;
 }
 
+.cart h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .most-cart {
     margin-top: 10px;
 }
 
-.selectall {
-    margin-bottom: 10px;
+.price {
+    color: #fff;
+}
+
+.game-rentout input[type=number] {
+    width: 260px;
+    height: 40px;
+    border-radius: 100px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: poppins, sans-serif;
+
+}
+
+.game-rentout label{
+    color: #fff;
+}
+
+/* .selectall {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+.selectall input[type=checkbox] {
+    margin-left: 0px;
+} */
+.most-cart label {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 20px;
 }
 
 .game-info {
@@ -15731,6 +15769,7 @@ input[type=date] {
 .pagination a {
     transition: background-color .3s;
 }
+
 .pagination a:hover {
     transition: background-color .3s;
     color: var(--color-primary);
@@ -15741,10 +15780,11 @@ input[type=date] {
     color: var(--color-background);
 }
 
-.show-all{
-    color:var(--color-primary);
-   
+.show-all {
+    color: var(--color-primary);
+
 }
-.show-all:hover{
+
+.show-all:hover {
     color: #fff;
 }

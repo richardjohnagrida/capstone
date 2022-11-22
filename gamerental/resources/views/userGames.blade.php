@@ -46,6 +46,9 @@
                             <li><a href="/profile">Home</a></li>
                             <li><a href="/shop" class="active">Games</a></li>
                             <li><a href="/cart">Cart</a></li>
+                            <li><a href="/"><span class="material-icons-sharp">
+                                        logout
+                                    </span></a></li>
                             {{-- <!-- <li><a href="details.html">Details</a></li> -->
                             <!-- <li><a href="streams.html">Streams</a></li> --> --}}
                             <li><a href="profile.html">Profile <img
@@ -253,11 +256,8 @@
                                         <input type='hidden' value="{{ json_encode($game) }}" name='game_info' />
                                         <input name="name" value="{{ $game->name }}" hidden />
                                         <div class="card-body d-flex flex-column">
-                                            <h5 class="card-title" >{{ $game->name }}</h5>
-                                            {{-- <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolorem porro ratione a fugiat, necessitatibus,
-                                                debitis ab officiis alias, illum quidem unde quae. Dignissimos iusto
-                                                sed, accusamus nemo debitis cupiditate iure.</p> --}}
+                                            <h5 class="card-title">{{ $game->name }}</h5>
+
 
                                         </div>
                                         <button type="submit" class='add-to-cart'>Add to Cart</button>
