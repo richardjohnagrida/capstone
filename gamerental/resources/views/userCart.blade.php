@@ -134,17 +134,18 @@
                                 @csrf;
 
                                 <input type='hidden' name='total_amount' value='0' />
-                                <input type='number' name='number_of_weeks' placeholder="Number of weeks" /><br>
-                                <span style="color:#fff">Total Price ₱ <label class='lbl-total-amount'></label></span><br>
+                                <input type='number' name='number_of_weeks' placeholder="Number of weeks"
+                                    style="margin: 30px 0px" /><br>
+                                <span style="color:#fff">Total Price ₱ <label style="margin-bottom: 0px"
+                                        class='lbl-total-amount'></label></span><br>
                                 <label for="pick-up">Pickup</label>
                                 <input type='radio' name='delivery_type' id="pick-up" value='pickup' />
                                 <label for="lalamove">Lalamove / Grab</label>
                                 <input type='radio' name='delivery_type' id="lalamove" value='courier' />
-                                <div class="col-lg-10 col-6">
-                                    <button class="remove_btn">Remove</button>
-                                </div>
+                                <button class="rentout_btn" type='submit' id='rent-out'>Rent Out</button>
+
+                                <button class="remove_btn">Remove</button>
                                 <div class="col-lg-2 col-6">
-                                    <button class="rentout_btn" type='submit' id='rent-out'>Rent Out</button>
                                 </div>
                             </form>
                         </div>
