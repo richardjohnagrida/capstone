@@ -7,7 +7,8 @@
     <title>WELCOME</title>
 </head>
 
-<body>
+<body style="background-image: url('images/background.png'); background-repeat: no-repeat;background-size: cover">
+
     {{-- <!-- ***** Preloader Start ***** -->
     <!-- <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -45,8 +46,8 @@
 
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="notGame.html">games</a></li>
+                            <li><a href="/" class="active">Home</a></li>
+                            <li><a href="/gamelist">games</a></li>
 
                             {{-- <!-- <li><a href="cart.html">Cart</a></li> -->
                             <!-- <li><a href="details.html">Details</a></li> -->
@@ -105,15 +106,48 @@
                     {{-- <!-- ***** Banner Start ***** --> --}}
                     <div class="main-banner">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6">
                                 <div class="header-text">
                                     <h6>Welcome to The Console</h6>
                                     <h4><em>Browse</em> Our Popular Games Here</h4>
                                     <div class="main-button">
-                                        <a href="notGame.html">Browse Now</a>
+                                        <a href="/gamelist">Browse Now</a>
                                     </div>
+
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="images/carousel1.jpg" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="images/carousel2.jpg" alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="images/carousel3" alt="Third slide">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     {{-- <!-- ***** Banner End ***** -->
@@ -128,64 +162,73 @@
                         <div class="row">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="item">
-                                    <div class="thumb">
-                                        {{-- <img src="assets/images/stream-01.jpg" alt=""> --}}
-                                        <div class="hover-effect">
-                                            <div class="content">
-                                                <div class="live">
-                                                    <a href="#">Add to Cart</a>
-                                                </div>
-                                                <ul>
-                                                    {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
-                                                    <!-- <li><a href="#"><i class="fa fa-gamepad"></i> CS-GO</a></li> --> --}}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="down-content">
-                                        {{-- <!-- <div class="avatar">
-                                            <img src="assets/images/avatar-01.jpg" alt=""
-                                                style="max-width: 46px; border-radius: 50%; float: left;">
-                                            </div> -->
-                                        <!-- <span><i class="fa fa-check"></i> KenganC</span> --> --}}
-                                        <h5>Game name</h5>
-                                    </div>
+                                    <img src="/images/nba.jpg" alt="profile" class="profile-photo"
+                                        style="width:100%"><br>
+                                    <h6 style="text-align:center">NBA2K23</span></h6>
+                                    <ul>
+                                    </ul>
                                 </div>
                             </div>
-                            {{-- <!-- <div class="col-lg-12">
-                                <div class="main-button">
-                                <a href="streams.html">Discover All Streams</a>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="item">
+                                    <img src="/images/GOT.jpg" alt="profile" class="profile-photo"
+                                        style="width:100%">
+                                    <h6 style="text-align:center">Ghost of Tsushima</span></h6>
+
+                                    <ul>
+                                    </ul>
                                 </div>
-                            </div> --> --}}
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="item">
+                                    <img src="/images/GOW.jpg" alt="profile" class="profile-photo"
+                                        style="width:100%">
+                                    <h6 style="text-align:center">God of War:Ragnarok</span></h6>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="item">
+                                    <img src="/images/elden ring.jpg" alt="profile" class="profile-photo"
+                                        style="width:100%">
+                                    <h6 style="text-align:center">Elden Ring</span></h6>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    {{-- <!-- ***** Most Popular End ***** -->
+
+                </div>
+            </div>
+            {{-- <!-- ***** Most Popular End ***** -->
                     <!-- ***** About Start ***** --> --}}
-                    <div class="most-popular text-center mb-5">
+            <div class="most-popular text-center mb-5">
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <div class="heading-section text-center">
+                            <h4>New Games</h4>
+                        </div>
                         <div class="row">
-                            <div class="col-lg-12 ">
-                                <div class="heading-section text-center">
-                                    <h4>New Games</h4>
+                            @foreach ($games as $game)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="item">
+                                        <img src="{{ url('images/' . $game->cover_img) }}" alt="profile"
+                                            class="profile-photo" style="width:100%">
+                                        <h4>{{ $game->name }}<br /><span>{{ $game->genre }}</span></h4>
+                                        <ul>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    @foreach ($games as $game)
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="item">
-                                                <img src="{{ url('images/' . $game->cover_img) }}" alt="profile"
-                                                    class="profile-photo" style="width:100%">
-                                                <h4>{{ $game->name }}<br /><span>{{ $game->genre }}</span></h4>
-                                                <ul>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-            {{-- <!-- ***** About End ***** -->
+        </div>
+    </div>
+    {{-- <!-- ***** About End ***** -->
                     <!-- ***** Gaming Library Start ***** -->
                     <!-- <div class="gaming-library">
                         <div class="col-lg-12">
@@ -237,7 +280,7 @@
                         </div>
                     </div> -->
                     <!-- ***** Gaming Library End ***** --> --}}
-        </div>
+    </div>
     </div>
     </div>
     </div>
