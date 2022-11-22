@@ -106,10 +106,8 @@
                             <input type="checkbox" class="selectall" />
                             <label for="" class="selectall" style="color:#00a2ff;">Select All</label>
 
-
-
                             <div class='col cart-item' template='template' style='display:none;'>
-                                <div class="col-lg-3 ">
+                                <div class="col-lg-12 ">
                                     <div class="item cart">
                                         <input type="checkbox" class="individual"
                                             style="float: left;margin-bottom: 10px;" />
@@ -117,7 +115,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-7 game-info">
+                                <div class="col-lg-5 game-info">
                                     <h3 class='game-name'>Game Name</h3>
                                     <h5 class='console-type'>Console type</h5>
                                     <span class='price'></span>
@@ -125,6 +123,9 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            
+                        </div>
                         <div class="row game-rentout">
                             <form action='/checkout' id='checkout' method='POST'>
                                 @csrf;
@@ -262,11 +263,11 @@
     {{-- <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="/js/userJS.js"></script>
-    <script src="/js/isotope.min.js"></script>
+    {{-- <script src="/js/isotope.min.js"></script>
     <script src="/js/owl-carousel.js"></script>
     <script src="/js/tabs.js"></script>
     <script src="/js/popup.js"></script>
-    <script src="/js/custom.js"></script>
+    <script src="/js/custom.js"></script> --}}
 </body>
 
 </html>

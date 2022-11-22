@@ -28,19 +28,18 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
-                        <a href="index.html" class="logo">
-                            {{-- <!-- <img src="assets/images/logo.png" alt=""> --> --}}
-                            <h1>GAME</h1>
+                        <a href="/" class="logo">
+                            @include('layouts/logo')
                         </a>
                         {{-- <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** --> --}}
-                        <div class="search-input">
+                        {{-- <div class="search-input">
                             <form id="search" action="#">
                                 <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
                                     onkeypress="handle" />
                                 <i class="fa fa-search"></i>
                             </form>
-                        </div>
+                        </div> --}}
                         {{-- <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
@@ -62,6 +61,7 @@
             </div>
         </div>
     </header>
+
     {{-- <!-- ***** Header Area End ***** --> --}}
 
     <div class="container">
@@ -127,8 +127,8 @@
                                 <div class="col-lg-4">
                                     <div class="item">
                                         <div class="icon">
-                                            <img src="assets/images/service-01.jpg" alt=""
-                                                style="max-width: 60px; border-radius: 50%;">
+                                            {{-- <img src="assets/images/service-01.jpg" alt=""
+                                                style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
                                         <h4>Go To Your Profile</h4>
                                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus veniam
@@ -142,8 +142,8 @@
                                 <div class="col-lg-4">
                                     <div class="item">
                                         <div class="icon">
-                                            <img src="assets/images/service-02.jpg" alt=""
-                                                style="max-width: 60px; border-radius: 50%;">
+                                            {{-- <img src="assets/images/service-02.jpg" alt=""
+                                                style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
                                         <h4>Live Stream Button</h4>
                                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
@@ -158,8 +158,8 @@
                                 <div class="col-lg-4">
                                     <div class="item">
                                         <div class="icon">
-                                            <img src="assets/images/service-03.jpg" alt=""
-                                                style="max-width: 60px; border-radius: 50%;">
+                                            {{-- <img src="assets/images/service-03.jpg" alt=""
+                                                style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
                                         <h4>You Are Live</h4>
                                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus veniam
@@ -184,7 +184,7 @@
                     {{-- <!-- ***** List of Games Start ***** --> --}}
                     <div class="live-stream text-left" id="most-popular-game">
                         <div class="col-lg-12">
-                            <div class="heading-section">
+                            <div class="heading-section" style="margin-bottom: 30px;">
                                 <h4><em>Most Popular</em> Games</h4>
 
                                 <form action="/shop" method="POST">
@@ -193,7 +193,7 @@
                                         name="search" onkeypress="handle" />
                                     <i class="fa fa-search"></i>
                                 </form>
-                                <a href="/shop">Show all </a>
+                                <a href="/shop" class="show-all">Show all </a>
 
                                 {{-- <form action="/shop" method="POST">
                                     @csrf
@@ -223,83 +223,86 @@
                             </div>
                         </div>
                         <div class="row">
-                            @foreach ($games as $game)
+                            {{-- @foreach ($games as $game)
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="item">
                                         <div class="thumb game-card">
 
-                                            <img src="{{ url('images/' . $game->cover_img) }}"alt="cover"
-                                                style="width=20%">
+                                            <img src="{{ url('images/' . $game->cover_img) }}"alt="cover">
                                             <input type='hidden' value="{{ json_encode($game) }}" name='game_info' />
                                             <input name="name" value="{{ $game->name }}" hidden />
-                                            <div class="hover-effect">
-                                                <div class="content">
-                                                    <div class="live">
-                                                        <button type="submit" class='add-to-cart'>Add to Cart</button>
-                                                        <button type="submit" class='remove-to-cart'
-                                                            style='display:none'>Remove to
-                                                            Cart</button>
-                                                    </div>
-                                                    <ul>
-                                                        {{-- <!-- <li><a href="#"><i class="fa fa-eye"></i> 1.2K</a></li> -->
-                                                    <!-- <li><a href="#"><i class="fa fa-gamepad"></i> CS-GO</a></li> --> --}}
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            <button type="submit" class='add-to-cart'>Add to Cart</button>
+                                            <button type="submit" class='remove-to-cart' style='display:none'>Remove to
+                                                Cart</button>
+
                                         </div>
                                         <div class="down-content">
-                                            {{-- <!-- <div class="avatar">
-                      <img src="assets/images/avatar-01.jpg" alt=""
-                        style="max-width: 46px; border-radius: 50%; float: left;">
-                    </div> -->
-                                        <!-- <span><i class="fa fa-check"></i> KenganC</span> --> --}}
                                             <h5>{{ $game->name }}</h5>
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach --}}
+
+
+                            @foreach ($games as $game)
+                                <div class="col-lg-3 mb-3 col-sm-6 d-flex align-items-stretch">
+                                    <div class="card thumb game-card  d-flex flex-column"
+                                        style="background: #1f2122; border:none;">
+                                        <img src="{{ url('images/' . $game->cover_img) }}"
+                                            style="height:350px"alt="cover" class="card-img-top">
+                                        <input type='hidden' value="{{ json_encode($game) }}" name='game_info' />
+                                        <input name="name" value="{{ $game->name }}" hidden />
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title" >{{ $game->name }}</h5>
+                                            {{-- <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Dolorem porro ratione a fugiat, necessitatibus,
+                                                debitis ab officiis alias, illum quidem unde quae. Dignissimos iusto
+                                                sed, accusamus nemo debitis cupiditate iure.</p> --}}
+
+                                        </div>
+                                        <button type="submit" class='add-to-cart'>Add to Cart</button>
+                                        <button type="submit" class='remove-to-cart' style='display:none'>Remove to
+                                            Cart</button>
+                                    </div>
+                                </div>
                             @endforeach
+
                             <div class="page-container-member">
                                 <div class="pagination">
                                     <a href="?page=1">&laquo;</a>
                                     @for ($x = 1; $x <= $pages; $x++)
                                         <a href="?page={{ $x }}"
                                             class="
-                @if ($activePage == $x) active @endif
-                ">
+                                        @if ($activePage == $x) active @endif
+                                         ">
                                             {{ $x }}</a>
                                     @endfor
                                     <a href="?page={{ $pages }}">&raquo;</a>
                                 </div>
                             </div>
-                            {{-- <!-- <div class="col-lg-12">
-                <div class="main-button">
-                  <a href="streams.html">Discover All Streams</a>
-                </div>
-              </div> --> --}}
                         </div>
-                    </div>
-                    {{-- <!-- ***** List of Game End ***** --> --}}
 
+
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    @include('layouts/userFooterIcons')
-    <footer class="mx-4">
-        @include('layouts/userFooter')
-    </footer>
+            @include('layouts/userFooterIcons')
+            <footer class="mx-4">
+                @include('layouts/userFooter')
+            </footer>
 
-    {{-- <!-- Scripts -->
+            {{-- <!-- Scripts -->
     <!-- Bootstrap core JavaScript --> --}}
-    {{-- <script src="/vendor/jquery/jquery.min.js"></script>
+            {{-- <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
-    <script src="/js/userJS.js"></script>
-    <script src="/js/isotope.min.js"></script>
-    <script src="/js/owl-carousel.js"></script>
-    <script src="/js/tabs.js"></script>
-    <script src="/js/popup.js"></script>
-    <script src="/js/custom.js"></script>
+            {{-- <script src="/js/userJS.js"></script> --}}
+            {{-- <script src="/js/isotope.min.js"></script>
+        <script src="/js/owl-carousel.js"></script>
+        <script src="/js/tabs.js"></script>
+        <script src="/js/popup.js"></script>
+        <script src="/js/custom.js"></script> --}}
 </body>
 
 </html>

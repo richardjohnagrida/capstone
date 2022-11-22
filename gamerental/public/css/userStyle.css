@@ -25,10 +25,8 @@ Table of contents
 font & reset css
 --------------------------------------------- 
 */
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 
 /* UTILITY CSS */
@@ -1345,7 +1343,7 @@ Live Stream Style
     transition: all .4s;
 }
 
-.live-stream .hover-effect .live a {
+.live-stream .hover-effect .live button {
     position: absolute;
     background-color: var(--color-primary);
     padding: 5px 10px;
@@ -15664,4 +15662,89 @@ input[type=date] {
         color: var(--color-primary);
         border: 1px solid #fff;
     }
+}
+
+
+/* Add to cart */
+
+.add-to-cart {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 120px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #00a2ff;
+    color: #fff;
+    border: 1px solid #00a2ff;
+}
+
+.remove-to-cart {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 150px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #00a2ff;
+    color: #fff;
+    border: 1px solid #00a2ff;
+}
+
+.card h5 {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card p {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pagination {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+.pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.pagination a {
+    border-radius: 50%;
+}
+
+
+.pagination a.active {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.pagination a {
+    transition: background-color .3s;
+}
+.pagination a:hover {
+    transition: background-color .3s;
+    color: var(--color-primary);
+}
+
+.paignation a:hover:not(.active) {
+    background-color: var(--color-dark);
+    color: var(--color-background);
+}
+
+.show-all{
+    color:var(--color-primary);
+   
+}
+.show-all:hover{
+    color: #fff;
 }

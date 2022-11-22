@@ -3,7 +3,6 @@
 
 <head>
     @include('layouts/userHead')
-
     <title>WELCOME</title>
 </head>
 
