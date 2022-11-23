@@ -17,6 +17,7 @@ class LoginController extends Controller
 {
     public function userLogin(Request $request){
         $user = Member::where("email", "=", $request->email)->first();
+        
         if ($user){
             if (Hash::check($request->password, $user -> password)){
                 $request->session()->put('member_id', $user -> member_id);
@@ -35,8 +36,11 @@ class LoginController extends Controller
         }
     }
 
+  
     public function showProfile(){
 
+        dd(Session::get("user_type"));
+      
         if (Session::get("user_type") == "member"){
             return view('/UserIndex');
         }

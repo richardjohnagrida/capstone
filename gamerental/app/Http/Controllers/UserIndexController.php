@@ -14,6 +14,8 @@ class UserIndexController extends Controller
 {
     public function showList(Request $request)
     {
+
+        // dd(Session::get('member_id'));
         
             $member = Session::get('member_id') ;
 
@@ -23,7 +25,11 @@ class UserIndexController extends Controller
 
             $listGames = DB::select("SELECT LAST_INSERT_ID(order_id) as lastOrder FROM order_item WHERE member_id = $member ORDER BY order_id DESC LIMIT 1");
 
-            $list = $listGames[0]->lastOrder;
+            if (count($listGames) > 0){
+                $list = $listGames[0]->lastOrder;
+            }else{
+                $list = 0;
+            }
 
             $gameList = DB::select("SELECT order_id, name FROM `order_item` INNER JOIN games ON order_item.game_id = games.game_id WHERE order_id = $list");
 
