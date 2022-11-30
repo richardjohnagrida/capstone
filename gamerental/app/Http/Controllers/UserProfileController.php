@@ -20,7 +20,7 @@ class UserProfileController extends Controller
        
         $memId = Session::get('member_id');
 
-        $members = DB::select("SELECT *  FROM `members`WHERE member_id = $memId");
+        $members = DB::select("SELECT *  FROM members WHERE member_id = $memId");
 
         $rent = DB::select("SELECT COUNT(order_id) as totalRent  FROM order_item WHERE member_id = $memId");
 

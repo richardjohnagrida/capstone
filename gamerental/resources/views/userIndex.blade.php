@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    {{-- <!-- ***** Preloader Start ***** -->
+    {{-- <!-- *** Preloader Start *** -->
     <!-- <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
       <span class="dot"></span>
@@ -18,21 +18,21 @@
       </div>
     </div>
   </div> -->
-    <!-- ***** Preloader End ***** -->
+    <!-- *** Preloader End *** -->
 
-    <!-- ***** Header Area Start ***** --> --}}
+    <!-- *** Header Area Start *** --> --}}
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        {{-- <!-- ***** Logo Start ***** --> --}}
+                        {{-- <!-- *** Logo Start *** --> --}}
                         <a href="" class="logo">
                             @include('layouts/logo')
                         </a>
-                        {{-- <!-- ***** Logo End ***** -->
+                        {{-- <!-- *** Logo End *** -->
 
-                        <!-- ***** Search End ***** -->
+                        <!-- *** Search End *** -->
                         <!-- <div class="search-input">
                             <form id="search" action="#">
                                 <input type="text" placeholder="Type Something" id="searchText" name="searchKeyword"
@@ -40,9 +40,9 @@
                                 <i class="fa fa-search"></i>
                             </form>
                         </div> -->
-                        <!-- ***** Search End ***** -->
+                        <!-- *** Search End *** -->
 
-                        <!-- ***** Menu Start ***** --> --}}
+                        <!-- *** Menu Start *** --> --}}
                         <ul class="nav">
                             <li><a href="/profile" class="active">Home</a></li>
                             <li><a href="/shop">games</a></li>
@@ -61,19 +61,19 @@
                         <a class="menu-trigger">
                             <span>Menu</span>
                         </a>
-                        {{-- <!-- ***** Menu End ***** --> --}}
+                        {{-- <!-- *** Menu End *** --> --}}
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    {{-- <!-- ***** Header Area End ***** --> --}}
+    {{-- <!-- *** Header Area End *** --> --}}
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-content">
-                    {{-- <!-- ***** Banner Start ***** --> --}}
+                    {{-- <!-- *** Banner Start *** --> --}}
                     <div class="main-banner">
                         <div class="row">
                             <div class="col-lg-7">
@@ -87,9 +87,9 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <!-- ***** Banner End ***** -->
+                    {{-- <!-- *** Banner End *** -->
 
-                    <!-- ***** Most Popular Start ***** --> --}}
+                    <!-- *** Most Popular Start *** --> --}}
                     <div class="row">
                         <div class="live-stream text-left" id="most-popular-game">
                             <div class="col-lg-12">
@@ -138,8 +138,8 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <!-- ***** Most Popular End ***** -->
-                    <!-- ***** About Start ***** --> --}}
+                    {{-- <!-- *** Most Popular End *** -->
+                    <!-- *** About Start *** --> --}}
                     <div class="most-popular text-center">
                         <div class="row">
                             <div class="col-lg-12">
@@ -165,62 +165,10 @@
                         </div>
                     </div>
                 </div>
-                {{-- <!-- ***** About End ***** -->
-                    <!-- ***** Gaming Library Start ***** --> --}}
-                <div class="gaming-library">
-                    <div class="col-lg-12">
-                        <div class="heading-section">
-                            <h4><em>Recent Rent</em> Status</h4>
-                        </div>
-                        <div class="row ">
-                            <div class="col-lg-12">
-                                <div class="item">
-
-                                    <table style="width:90%; color:white">
-                                        <thead>
-                                            <tr>
-                                                <th>Rent ID</th>
-                                                <th>Game Tittle</th>
-                                                <th>Rent Date</th>
-                                                <th>Rent Due</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            @foreach ($rents as $rent)
-                                                <tr>
-                                                    <td>{{ $rent->order_id }}</td>
-                                                    <td>
-                                                        @foreach ($gameList as $tittle)
-                                                            {{ $tittle->name }}<br>
-                                                        @endforeach
-                                                    </td>
-                                                    <td>{{ $rent->created_at }}</td>
-                                                    <td>{{ $rent->due_dates }}</td>
-                                                    <td>{{ $rent->status }}</td>
-                                                </tr>
-                                            @endforeach
-
-                                        </tbody>
-                                    </table>
-
-                                    <p style="color: white; text-align:center"> <small>For pending rent order, due
-                                            date
-                                            will be
-                                            updated upon order approval</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="main-button">
-                            <a href="/library">View Your Library</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- <!-- ***** Gaming Library End ***** --> --}}
+                {{-- <!-- *** About End *** -->
+                    <!-- *** Gaming Library Start *** --> --}}
+               
+                {{-- <!-- *** Gaming Library End *** --> --}}
             </div>
         </div>
     </div>

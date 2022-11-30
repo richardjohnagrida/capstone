@@ -33,7 +33,11 @@ class LoginController extends Controller
 
                     $member = Session::get('member_id') ;
 
+<<<<<<< HEAD
                     $games = DB::select("SELECT *  FROM `games` ORDER BY game_id DESC LIMIT 4 ");
+=======
+                    $games = DB::select("SELECT *  FROM games ORDER BY game_id DESC LIMIT 4 ");
+>>>>>>> e0a6acbb14f14e198c6e2a41eae951592780811b
         
                     $rents = DB::select("SELECT * FROM orders_games  WHERE member_id =$member ORDER BY order_id DESC LIMIT 1");
         
@@ -45,7 +49,11 @@ class LoginController extends Controller
                         $list = 0;
                     }
         
+<<<<<<< HEAD
                     $gameList = DB::select("SELECT order_id, name FROM `order_item` INNER JOIN games ON order_item.game_id = games.game_id WHERE order_id = $list");
+=======
+                    $gameList = DB::select("SELECT order_id, name FROM order_item INNER JOIN games ON order_item.game_id = games.game_id WHERE order_id = $list");
+>>>>>>> e0a6acbb14f14e198c6e2a41eae951592780811b
                     return view("userIndex", compact("games",'rents','gameList'));
 
                 }

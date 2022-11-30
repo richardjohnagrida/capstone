@@ -74,7 +74,7 @@ class SignupMemberController extends Controller
         $member->save();
 
        
-        return redirect("welcome");
+        return redirect("/");
     }
 
     public function show_signup_form(){

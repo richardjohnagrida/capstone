@@ -110,7 +110,7 @@
 
                 <div class="col-lg-12 ">
                     <div class="heading-section text-center">
-                        <h6 class="pb-5">PlaySyation Games</h6>
+                        <h6 class="pb-5">PlayStation Games</h6>
                     </div>
                     <div class="row">
                         @foreach ($games as $game)

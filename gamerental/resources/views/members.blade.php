@@ -123,7 +123,7 @@
                     <tbody>
                         @foreach ($members as $member)
                             <tr>
-                                <td style="padding:0px 25px;"><img src="{{ url('images/' . $member->img_profile) }}"
+                                <td style="padding:0px 25px;"><img src="{{ url('/' . $member->img_profile) }}"
                                         alt="profile" class="profile-photo"></td>
                                 <td>{{ $member->last_name }}, {{ $member->first_name }}</td>
                                 <td>{{ $member->contact_number }}</td>
@@ -236,7 +236,7 @@
                     <div class="update">
                         @foreach ($pendings as $pending)
                             <div class="profile-photo">
-                                <img src="{{ url('images/' . $pending->img_profile) }}" alt="profile">
+                                <img src="{{ url('/' . $pending->img_profile) }}" alt="profile">
                             </div>
 
                             <div class="message">
@@ -273,11 +273,15 @@
                         <label for="">Date Registered</label>
                         <input type="text" name="birthday" value="{{ $pending->created_at }}">
                         <p>Submitted Requirements</p>
-                        <img src="{{ url('images/' . $pending->img_profile) }}" alt="profile" style="width:20%">
-                        <img src="{{ url('images/' . $pending->img_id) }}" alt="profile" style="width:20%">
-                        <img src="{{ url('images/' . $pending->img_requirements) }}" alt="profile"
+                        <div class="submited-pic"style="display: flex">
+                            <img src="{{ url('/' . $pending->img_profile) }}" alt="profile"
+                                style="width:20% ">
+                            <img src="{{ url('/' . $pending->img_id) }}" alt="profile" style="width:20%">
+                            <img src="{{ url('/' . $pending->img_requirements) }}" alt="profile"
                             style="width:20%">
+                        </div>
 
+                        
                         <button type="submit" class="modal__btn update-btn">Approve &rarr;</button>
                     </form>
 

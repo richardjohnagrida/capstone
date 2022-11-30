@@ -29,10 +29,10 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         {{-- <!-- ***** Logo Start ***** --> --}}
-                        <a href="index.html" class="logo">
-                            {{-- <!-- <img src="assets/images/logo.png" alt=""> --> --}}
-                            <h1>GAME</h1>
+                        <a href="/profile" class="logo">
+                            @include('layouts/logo')
                         </a>
+
                         {{-- <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
                         <!-- <div class="search-input">
@@ -45,13 +45,13 @@
                         <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** --> --}}
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="/profile" class="active">Home</a></li>
                             <li><a href="/shop">games</a></li>
                             <li><a href="/cart">Cart</a></li>
                             <li><a href="/logout">Logout</a></li>
 
                             <li>
-                                <a href="profile.html">Profile
+                                <a href="/profile">Profile
                                     <img src="{{ url('images/' . Session::get('img_profile')) }}" alt="profile"
                                         class="profile-photo"></a>
                             </li>
@@ -121,10 +121,45 @@
                         <div class="col-lg-12">
                             <div class="heading-section">
                                 <h4><em>Recent Rent</em> Status</h4>
+                                <h4><em>Recent Rent</em> Status</h4>
                             </div>
                             <div class="row ">
                                 <div class="col-lg-12">
                                     <div class="item">
+
+                                        <table style="width:90%; color:white">
+                                            <thead>
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>Game Tittle</th>
+                                                    <th>Rent Date</th>
+                                                    <th>Rent Due</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach ($rents as $rent)
+                                                    <tr>
+                                                        <td>{{ $rent->order_id }}</td>
+                                                        <td>
+                                                            @foreach ($gameList as $tittle)
+                                                                {{ $tittle->name }}<br>
+                                                            @endforeach
+                                                        </td>
+                                                        <td>{{ $rent->created_at }}</td>
+                                                        <td>{{ $rent->due_dates }}</td>
+                                                        <td>{{ $rent->status }}</td>
+                                                    </tr>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+
+                                        <p style="color: white; text-align:center"> <small>For pending rent order, due
+                                                date
+                                                will be
+                                                updated upon order approval</small></p>
 
                                         <table style="width:90%; color:white">
                                             <thead>
@@ -171,6 +206,7 @@
                         </div>
                     </div>
                     {{-- <!-- ***** Gaming Library End ***** --> --}}
+
                 </div>
             </div>
         </div>
