@@ -27,7 +27,33 @@ class LoginController extends Controller
                 $request->session()->put('last_name', $user -> last_name);
                 $request->session()->put('img_profile', $user -> img_profile);
 
-                return redirect('/profile');
+        
+
+                if (Session::get("user_type") == "member"){
+
+                    $member = Session::get('member_id') ;
+
+                    $games = DB::select("SELECT *  FROM `games` ORDER BY game_id DESC LIMIT 4 ");
+        
+                    $rents = DB::select("SELECT * FROM orders_games  WHERE member_id =$member ORDER BY order_id DESC LIMIT 1");
+        
+                    $listGames = DB::select("SELECT LAST_INSERT_ID(order_id) as lastOrder FROM order_item WHERE member_id = $member ORDER BY order_id DESC LIMIT 1");
+        
+                    if (count($listGames) > 0){
+                        $list = $listGames[0]->lastOrder;
+                    }else{
+                        $list = 0;
+                    }
+        
+                    $gameList = DB::select("SELECT order_id, name FROM `order_item` INNER JOIN games ON order_item.game_id = games.game_id WHERE order_id = $list");
+                    return view("userIndex", compact("games",'rents','gameList'));
+
+                }
+        
+                elseif(Session::get("user_type") == "admin"){
+                    return redirect('/admin_dashboard');
+                }
+
             }else{
                 return "Wrong password!";
             }
@@ -39,19 +65,19 @@ class LoginController extends Controller
   
     public function showProfile(){
 
-        dd(Session::get("user_type"));
       
-        if (Session::get("user_type") == "member"){
-            return view('/UserIndex');
-        }
 
-        elseif(Session::get("user_type") == "admin"){
-            return redirect('/admin_dashboard');
-        }
+        // if (Session::get("user_type") == "member"){
+        //     return view('/UserIndex');
+        // }
+
+        // elseif(Session::get("user_type") == "admin"){
+        //     return redirect('/admin_dashboard');
+        // }
         
-        else{
-            return "Not logged in!";
-        }
+        // else{
+        //     return "Not logged in!";
+        // }
    
     }
 

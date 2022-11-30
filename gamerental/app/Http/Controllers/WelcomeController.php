@@ -14,7 +14,7 @@ class WelcomeController extends Controller
 {
     public function showGames(Request $request)
     {
-        $games = DB::select("SELECT *  FROM `games` ORDER BY game_id DESC LIMIT 4 ");
+        $games = DB::select("SELECT *  FROM games ORDER BY game_id DESC LIMIT 4 ");
 
         return view("welcome", compact("games"));
     }

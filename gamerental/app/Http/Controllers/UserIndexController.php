@@ -19,7 +19,7 @@ class UserIndexController extends Controller
         
             $member = Session::get('member_id') ;
 
-            $games = DB::select("SELECT *  FROM `games` ORDER BY game_id DESC LIMIT 4 ");
+            $games = DB::select("SELECT *  FROM games ORDER BY game_id DESC LIMIT 4 ");
 
             $rents = DB::select("SELECT * FROM orders_games  WHERE member_id =$member ORDER BY order_id DESC LIMIT 1");
 

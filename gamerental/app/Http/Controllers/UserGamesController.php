@@ -23,11 +23,11 @@ class UserGamesController extends Controller
             $offset = $limit * ($request->get("page")-1);
             
         }
-        $games = DB::select("SELECT *  FROM `games` ORDER BY console_id");
+        $games = DB::select("SELECT *  FROM games ORDER BY console_id");
 
-        $platforms = DB::select("SELECT *  FROM `platforms`");
+        $platforms = DB::select("SELECT *  FROM platforms");
         
-        $totalRows =  DB::select("SELECT COUNT(game_id) as totalRows FROM `games` WHERE status ='active'");
+        $totalRows =  DB::select("SELECT COUNT(game_id) as totalRows FROM games WHERE status ='active'");
       
         $countRows = $totalRows[0]->totalRows;
         $pages = ceil($countRows/$limit);
@@ -52,11 +52,11 @@ class UserGamesController extends Controller
 
           if($request->input("search") != null){
             
-            $games = DB::select("SELECT *  FROM `games` WHERE name LIKE '%$tittle%' ");
+            $games = DB::select("SELECT *  FROM games WHERE name LIKE %$tittle% ");
 
         }
 
-        $totalRows =  DB::select("SELECT COUNT(game_id) as totalRows FROM `games` WHERE status ='active' AND name LIKE '%$tittle%' ");
+        $totalRows =  DB::select("SELECT COUNT(game_id) as totalRows FROM `games` WHERE status =active AND name LIKE %$tittle% ");
       
         $countRows = $totalRows[0]->totalRows;
         $pages = ceil($countRows/$limit);
@@ -73,16 +73,16 @@ class UserGamesController extends Controller
         
         if($console != null && $genre !=null)
         {
-            $games =  DB::select("SELECT *  FROM `games`  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE console_name ='$console' AND genre = '$genre' ");
+            $games =  DB::select("SELECT *  FROM games  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE console_name =$console AND genre = $genre ");
 
         }
 
         elseif($console == null && $genre !=null){
-            $games =  DB::select("SELECT *  FROM `games`  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE genre = '$genre' ");
+            $games =  DB::select("SELECT *  FROM games  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE genre = $genre ");
         }
 
         elseif($console != null && $genre == null){
-            $games =  DB::select("SELECT *  FROM `games`  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE console_name ='$console' ");
+            $games =  DB::select("SELECT *  FROM games  INNER JOIN platforms ON games.console_id = platforms.console_id WHERE console_name =$console ");
         }
   
 

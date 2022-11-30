@@ -38,7 +38,7 @@ class OrdersController extends Controller
         }
 
 
-        $totalRows =  DB::select("SELECT COUNT(order_id) as totalRows FROM `orders_games` WHERE status ='active'");
+        $totalRows =  DB::select("SELECT COUNT(order_id) as totalRows FROM orders_games WHERE status =active");
 
         $countRows = $totalRows[0]->totalRows;
         $pages = ceil($countRows/$limit);
@@ -57,10 +57,6 @@ class OrdersController extends Controller
 
     }
   
-
-
-
-
 
     public function update(Request $request, $id)
     {

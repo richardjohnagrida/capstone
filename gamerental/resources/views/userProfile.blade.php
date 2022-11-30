@@ -120,58 +120,62 @@
                     <div class="gaming-library">
                         <div class="col-lg-12">
                             <div class="heading-section">
-                                <h4><em>Your Gaming</em> Library</h4>
+                                <h4><em>Recent Rent</em> Status</h4>
                             </div>
                             <div class="row ">
                                 <div class="col-lg-12">
                                     <div class="item">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/game-01.jpg" alt=""
-                                                    class="templatemo-item" />
-                                            </li>
-                                            <li>
-                                                <h4>Dota 2</h4>
-                                                <span>Sandbox</span>
-                                            </li>
-                                            <li>
-                                                <h4>Rented Date</h4>
-                                                <span>24/08/2036</span>
-                                            </li>
-                                            <li>
-                                                <h4>Rent Due</h4>
-                                                <span>24/08/2036</span>
-                                            </li>
-                                            <li>
-                                                <h4>Console</h4>
-                                                <span>PS5</span>
-                                            </li>
-                                            <li>
-                                                <h4>Currently</h4>
-                                                <span>Rented</span>
-                                            </li>
-                                            <li>
-                                                {{-- <!-- <div class="main-border-button border-no-active">
-                      <a href="#">Rented</a>
-                    </div> --> --}}
-                                            </li>
-                                        </ul>
+
+                                        <table style="width:90%; color:white">
+                                            <thead>
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>Game Tittle</th>
+                                                    <th>Rent Date</th>
+                                                    <th>Rent Due</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach ($rents as $rent)
+                                                    <tr>
+                                                        <td>{{ $rent->order_id }}</td>
+                                                        <td>
+                                                            @foreach ($gameList as $tittle)
+                                                                {{ $tittle->name }}<br>
+                                                            @endforeach
+                                                        </td>
+                                                        <td>{{ $rent->created_at }}</td>
+                                                        <td>{{ $rent->due_dates }}</td>
+                                                        <td>{{ $rent->status }}</td>
+                                                    </tr>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+
+                                        <p style="color: white; text-align:center"> <small>For pending rent order, due
+                                                date
+                                                will be
+                                                updated upon order approval</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {{-- <!-- <div class="col-lg-12">
-              <div class="main-button">
-                <a href="profile.html">View Your Library</a>
-              </div>
-            </div> --> --}}
+                        <div class="col-lg-12">
+                            <div class="main-button">
+                                <a href="/library">View Your Library</a>
+                            </div>
+                        </div>
                     </div>
                     {{-- <!-- ***** Gaming Library End ***** --> --}}
                 </div>
             </div>
         </div>
     </div>
+
 
     @include('layouts/userFooterIcons')
     <footer class="mx-4">
