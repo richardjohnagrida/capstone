@@ -144,7 +144,7 @@
                                 <input type='radio' name='delivery_type' id="lalamove" value='courier' />
                                 <button class="rentout_btn" type='submit' id='rent-out'>Rent Out</button>
 
-                                <button class="remove_btn">Remove</button>
+                                
                                 <div class="col-lg-2 col-6">
                                 </div>
                             </form>

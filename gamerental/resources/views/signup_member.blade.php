@@ -49,29 +49,29 @@
                                     <div class="row">
                                         <div class="col-lg-7">
                                             <label>First name</label>
-                                            <input type="text" name="fname">
+                                            <input type="text" name="fname" required>
                                             <label>Last name</label>
-                                            <input type="text" name="lname">
+                                            <input type="text" name="lname" required>
                                             <label>Password</label>
-                                            <input type="password" name="password">
+                                            <input type="password" name="password" required>
                                             <label>Confirm Password</label>
-                                            <input type="password" name="confirmPass">
+                                            <input type="password" name="confirmPass" required>
                                             <label>Contact Number</label>
-                                            <input type="text" name="contact">
+                                            <input type="text" name="contact" required>
                                             <label>Date of Birth</label>
-                                            <input type="date" name="dob">
+                                            <input type="date" name="dob" required>
                                         </div>
                                         <div class="col-lg-5">
                                             <label>Email</label>
-                                            <input type="text" name="email">
+                                            <input type="text" name="email" required>
                                             <label>Address</label>
-                                            <input type="text" name="address">
+                                            <input type="text" name="address" required>
                                             <label>Upload governement ID:</label>
-                                            <input type="file" name="id">
+                                            <input type="file" name="id" required>
                                             <label>Upload Proof of Billing:</label>
-                                            <input type="file" name="proof">
+                                            <input type="file" name="proof" required>
                                             <label>Upload profile photo:</label>
-                                            <input type="file" name="profile" accept="{{ $allowed_img_format }}">
+                                            <input type="file" name="profile" accept="{{ $allowed_img_format }}" required>
                                             <button class="sign_btn" type="submit">Submit</button>
                                         </div>
                                     </div>

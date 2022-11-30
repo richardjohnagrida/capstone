@@ -133,8 +133,8 @@
                                             {{-- <img src="assets/images/service-01.jpg" alt=""
                                                 style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
-                                        <h4>Select Games</h4>
-                                        <p>From your homepage, select SHOP and choose from wide variety of games</p>
+                                        <h4>Add to Cart</h4>
+                                        <p>Choose from wide variety of games and click the "Add to Cart" button</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -143,7 +143,7 @@
                                             {{-- <img src="assets/images/service-02.jpg" alt=""
                                                 style="max-width: 60px; border-radius: 50%;"> --}}
                                         </div>
-                                        <h4>Add to Cart</h4>
+                                        <h4>Rent Out</h4>
                                         <p>Upon selecting, go to CART to review the games before pressing rent out</p>
                                     </div>
                                 </div>

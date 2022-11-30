@@ -13,8 +13,8 @@
                     <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b></h1>
                 @endforeach --}}
 
-                @foreach ($months as $month)
-                   <h1> &#8369<b class="num" data-val={{ $month->months }}></b> </h1>
+                @foreach ($profits as $profit)
+                    <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b> </h1>
                 @endforeach
             </div>
             <div class="progress">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <small class="text-muted">Last 24 hours</small>
+        <small class="text-muted">Month to date</small>
     </div>
     <!-- end of ren -->
     <div class="re">
@@ -61,8 +61,16 @@
         </span>
         <div class="middle">
             <div class="left">
-                <h3>Total Re</h3>
-                <h1>$<b class="num" data-val="1000">000</b></h1>
+                <h3>Monthly Profit</h3>
+                <!-- TODO data-val should be connected to the database -->
+
+                {{-- @foreach ($profits as $profit)
+                    <h1> &#8369<b class="num" data-val={{ $profit->total_amount }}></b></h1>
+                @endforeach --}}
+
+                @foreach ($months as $month)
+                    <h1> &#8369<b class="num" data-val={{ $month->months }}></b> </h1>
+                @endforeach
             </div>
             <div class="progress">
                 <!-- <svg>
@@ -73,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <small class="text-muted">Last 24 hours</small>
+        <small class="text-muted">Month to date</small>
     </div>
     <!-- end of re-->
 </div>
